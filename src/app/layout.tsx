@@ -1,5 +1,8 @@
+
+import { ThemeProvider } from "next-themes";
 import type { Metadata } from "next";
 import "./globals.css";
+import "./fonts.css";
 
 
 
@@ -19,7 +22,9 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body className={`antialiased`}>
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

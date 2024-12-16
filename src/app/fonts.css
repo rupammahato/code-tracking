@@ -1,0 +1,7 @@
+/* src/app/fonts.css */
+@font-face {
+    font-family: 'Canilari';
+    src: url('./fonts/Canilari-StdBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
