@@ -1,4 +1,116 @@
-'use client';
+import Image from "next/image";
+import React from "react";
+import { Timeline } from "@/components/ui/timeline";
+import green1 from "./assets/green1.png";
+import green2 from "./assets/green2.png";
+import model1 from "./assets/Model1.jpg";
+import model2 from "./assets/Model2.jpg";
+import photo1 from "./assets/photo1.jpg";
+import photo2 from "./assets/photo2.jpg";
+import { HoverBorderGradient } from "./ui/hover-border-gradient";
+
 export default function Events() {
-    return <div>Events</div>;
+  const data = [
+    {
+      title: "Green Canvas",
+      content: (
+        <div>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+          The purpose of Green Canvas is to encourage participants to come up with innovative and 
+          creative ways to mitigate effects of pollution and restore greenery
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <Image
+              src={green1}
+              alt="startup template"
+              width={500}
+              height={500}
+              className="rounded-lg object-cover h-40 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            />
+           <Image
+              src={green2}
+              alt="startup template"
+              width={500}
+              height={500}
+              className="rounded-lg object-cover h-40 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            />
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "Model Exhibition",
+      content: (
+        <div>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+          In this event, Megalith give the opportunity to the participants to bring their creative ideas to life 
+          by crafting small-scale models that represent the real-world projects
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <Image
+              src={model1}
+              alt="hero template"
+              width={500}
+              height={500}
+              className="rounded-lg object-cover  md:h-44 lg:h-60 h-40 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            />
+            <Image
+              src={model2}
+              alt="feature template"
+              width={500}
+              height={500}
+              className="rounded-lg object-cover md:h-44 lg:h-60 h-40 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            />
+           
+          </div>
+        </div>
+      ),
+    },
+    {
+        title: "Photography",
+        content: (
+          <div>
+            <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            This event encourages the participants to showcase their photographic skills that help them 
+            capture cherishable moments and to uplift their creative and imaginative skills
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <Image
+                src={photo1}
+                alt="hero template"
+                width={500}
+                height={500}
+                className="rounded-lg object-cover md:h-44 lg:h-60 h-40 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              />
+              <Image
+                src={photo2}
+                alt="feature template"
+                width={500}
+                height={500}
+                className="rounded-lg object-cover md:h-44 lg:h-60 h-40 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              />
+             
+            </div>
+          </div>
+        ),
+      },
+
+  ];
+  return (
+    <div className="w-full flex flex-col items-center justify-center py-5">
+      <div className="max-w-7xl mx-auto py-5 px-4 md:px-8 lg:px-10">
+        <h2 className="text-4xl sm:text-4xl font-bold md:text-7xl text-black dark:text-white text-center max-w-4xl">
+          Events
+        </h2>
+      </div>
+      <Timeline data={data} />
+      <HoverBorderGradient
+        containerClassName="rounded-full"
+        as="button"
+        className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
+      >
+        <span>Other Events</span>
+      </HoverBorderGradient>
+    </div>
+  );
 }
