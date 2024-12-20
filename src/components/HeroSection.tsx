@@ -2,6 +2,7 @@
 import MemoizedStars from "./ui/MemoizedStars";
 import { HoverBorderGradient } from "./ui/hover-border-gradient";
 import { Spotlight } from "./ui/Spotlight";
+import ClientOnly from './ClientOnly';
 
 export default function HeroSection() {
   return (
@@ -41,7 +42,9 @@ export default function HeroSection() {
             </HoverBorderGradient>
           </div>
         </div>
-        <MemoizedStars />
+        <ClientOnly>
+          <MemoizedStars />
+        </ClientOnly>
       </div>
     </div>
   );
