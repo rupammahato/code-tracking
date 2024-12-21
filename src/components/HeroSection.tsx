@@ -2,10 +2,11 @@
 import MemoizedStars from "./ui/MemoizedStars";
 import { HoverBorderGradient } from "./ui/hover-border-gradient";
 import { Spotlight } from "./ui/Spotlight";
+import ClientOnly from './ClientOnly';
 
 export default function HeroSection() {
   return (
-    <div className="w-full mx-auto rounded-md h-screen flex flex-col items-center justify-center bg-dark overflow-hidden">
+    <div className="w-full mx-auto rounded-md h-screen flex flex-col items-center justify-center bg-white dark:bg-black overflow-hidden">
       <Spotlight
         className="-top-40 left-0 md:left-[10%] md:-top-20"
         fill="white"
@@ -41,7 +42,9 @@ export default function HeroSection() {
             </HoverBorderGradient>
           </div>
         </div>
-        <MemoizedStars />
+        <ClientOnly>
+          <MemoizedStars />
+        </ClientOnly>
       </div>
     </div>
   );

@@ -19,7 +19,7 @@ const contactInfo = [
 export default function Footer() {
   return (
     <BackgroundBeamsWithCollision
-    className="w-full h-full md:h-auto bg-black"
+    className="w-full h-full md:h-auto bg-white text-black dark:text-white dark:bg-black "
     >
       <footer className="bg-dark text-white w-full">
         <div className="w-full mx-auto px-4 sm:px-6 py-8 sm:py-12 lg:py-16">
@@ -73,9 +73,9 @@ export default function Footer() {
                   transition={{ duration: 0.3, delay: 0.4 + index * 0.1 }}
                     >
                   <div className="p-2 rounded-full bg-gray-800/50 group-hover:bg-gray-700/50 transition-colors">
-                    <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 group-hover:text-white transition-colors" />
+                    <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-gray-900 dark:text-gray-400 dark:group-hover:text-white group-hover:text-gray-800 transition-colors" />
                   </div>
-                  <span className="text-sm sm:text-base text-gray-300 group-hover:text-white transition-colors">
+                  <span className="text-sm sm:text-base text-gray-900 dark:text-gray-300 dark:group-hover:text-white group-hover:text-gray-800 transition-colors">
                       {item.content}
                     </span>
                   </motion.div>
