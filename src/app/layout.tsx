@@ -1,8 +1,10 @@
+import { Providers } from "./providers";
 import { ThemeProvider } from "next-themes";
 import type { Metadata } from "next";
 import "./globals.css";
 import "./fonts.css";
 import { ThemeInitializer } from "@/components/ThemeInitializer";
+import  NavbarSection from "@/components/Navbar"
 
 export const metadata: Metadata = {
   title: "Megalith 2025",
@@ -19,11 +21,14 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className={`antialiased`} suppressHydrationWarning>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          <ThemeInitializer />
-          {children}
-        </ThemeProvider>
+      <body className="antialiased" suppressHydrationWarning>
+        <Providers>
+          <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+            <ThemeInitializer />
+            <NavbarSection />
+            {children}
+          </ThemeProvider>
+        </Providers>
       </body>
     </html>
   );
