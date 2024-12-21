@@ -1,9 +1,31 @@
-
+"use client";
+import HeroSection from "@/components/HeroSection";
+import Events from "@/components/Events";
+import About from "@/components/About";
+import FAQs from "@/components/FAQs";
+import Footer from "@/components/Footer";
+import Gallery from "@/components/Gallery";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-black">
-      <h1 className="text-4xl font-bold text-white">Hello World</h1>
+    <div className="bg-black flex flex-col items-center justify-center">
+      <HeroSection />
+      <About />
+      <Events />
+      <Gallery />
+      <FAQs />
+      <Footer />
     </div>
   );
 }
