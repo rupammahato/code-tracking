@@ -9,14 +9,14 @@ import React from "react";
 
 export default function FAQs() {
   return (
-    <div className="w-full flex flex-col items-center justify-center py-5">
+    <div className="w-full flex flex-col bg-white dark:bg-black text-black dark:text-white items-center justify-center py-5">
       <div className="flex items-center justify-center py-10">
           <h2 className="text-4xl sm:text-4xl font-bold md:text-6xl text-black dark:text-white text-center ">
             FAQs
           </h2>
       </div>
-      <div className="w-2/3 text-white mx-auto py-5 px-4 md:px-8 lg:px-10">
-      <Accordion type="single" collapsible className="border-b-2 border-gray-800 w-3xl">
+      <div className="w-2/3 text-black dark:text-white mx-auto py-5 px-4 md:px-8 lg:px-10">
+      <Accordion type="single" collapsible className="border-b-2 dark:border-gray-800 w-3xl">
         <AccordionItem value="item-1" >
           <AccordionTrigger>What is Megalith, and what is its primary focus?</AccordionTrigger>
           <AccordionContent className="text-gray-400 max-w-3xl">

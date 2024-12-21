@@ -100,9 +100,9 @@ export default function Events() {
     },
   ];
   return (
-    <div className="w-full flex flex-col items-center justify-center py-5">
-      <div className="max-w-7xl mx-auto py-5 px-4 md:px-8 lg:px-10">
-        <h2 className="text-4xl sm:text-4xl font-bold md:text-7xl text-black dark:text-white text-center max-w-4xl">
+    <div className="w-full flex flex-col items-center justify-center py-0 bg-white dark:bg-black dark:text-white">
+      <div className="max-w-7xl mx-auto bg-white dark:bg-black">
+        <h2 className="text-4xl sm:text-4xl font-bold md:text-7xl text-black dark:bg-black bg-white dark:text-white text-center max-w-4xl">
           Events
         </h2>
       </div>
