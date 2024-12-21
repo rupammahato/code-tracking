@@ -11,7 +11,7 @@ export default function HeroSection() {
         className="-top-40 left-0 md:left-[10%] md:-top-20"
         fill="white"
       />
-      <div className="flex items-center flex-col gap-0 justify-center px-2 md:px-10 py-0 w-full h-full min-h-screen dark:bg-black bg-white dark:bg-grid-small-white/[0.2] bg-grid-small-black/[0.2]">
+      <div className="flex items-center flex-col gap-0 justify-center px-2 md:px-10 py-0 w-full h-full min-h-screen dark:bg-black bg-white">
         <h2 className="text-gray-400 text-[4rem] sm:text-[4rem] md:text-[7rem] font-canilari font-bold text-center">
           <span className="text-red-600 m-0">MEGA</span>LITH{" "}
           <span className="m-0 text-[5rem] sm:text-[4rem] md:text-[8.5rem] text-gray-100">
