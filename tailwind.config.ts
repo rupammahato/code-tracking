@@ -15,6 +15,7 @@ const config: Config = {
         canilari: ['Canilari', 'sans-serif']
       },
       animation: {
+        fadeIn: 'fadeIn 0.5s ease-out forwards',
         spotlight: 'spotlight 2s ease .75s 1 forwards',
         scroll: 'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite',
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -26,9 +27,6 @@ const config: Config = {
           '100%': { opacity: '1', transform: 'translateY(0)' }
         }
       },
-      animation: {
-        fadeIn: 'fadeIn 0.5s ease-out forwards'
-      }
     },
         spotlight: {
           '0%': {
@@ -53,8 +51,6 @@ const config: Config = {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' }
         }
-      }
-    }
   },
   darkMode: "class",
   plugins: [nextui()]
