@@ -7,30 +7,30 @@ import { MdEmail } from 'react-icons/md'
 const designHeads = [
   {
     id: 1,
-    name: 'Design Head 1',
+    name: 'Sunetra Pratihar',
     role: 'Design Team Head',
     image: '/pImages/designhead1.jpg',
     email: 'designhead1@example.com',
-    linkedin: 'https://linkedin.com/in/designhead1',
-    facebook: 'https://facebook.com/designhead1'
+    linkedin: 'https://www.linkedin.com/in/sunetra-pratihar-6496ba22b',
+    facebook: 'https://www.facebook.com/sunetra.pratihar.5?mibextid=ZbWKwL'
   },
   {
     id: 2,
-    name: 'Design Head 2',
+    name: 'Samprit Saha',
     role: 'Design Team Head',
     image: '/pImages/designhead2.jpg',
     email: 'designhead2@example.com',
-    linkedin: 'https://linkedin.com/in/designhead2',
-    facebook: 'https://facebook.com/designhead2'
+    linkedin: 'https://www.linkedin.com/in/sampritsaha',
+    facebook: 'https://www.facebook.com/profile.php?id=100087482497244&mibextid=ZbWKwL'
   },
   {
     id: 3,
-    name: 'Design Head 3',
+    name: 'Jiya Gupta',
     role: 'Design Team Head',
     image: '/pImages/designhead3.jpg',
     email: 'designhead3@example.com',
-    linkedin: 'https://linkedin.com/in/designhead3',
-    facebook: 'https://facebook.com/designhead3'
+    linkedin: 'https://www.linkedin.com/in/jiya-gupta-251744283',
+    facebook: 'https://www.facebook.com/profile.php?id=100087660277635&mibextid=ZbWKwL'
   }
 ];
 
@@ -38,7 +38,7 @@ const designHeads = [
 const designMembers = [
   {
     id: 1,
-    name: 'Design Member 1',
+    name: 'Karina Dhaka',
     role: 'Design Team Member',
     image: '/pImages/designmember1.jpg',
     email: 'designmember1@example.com',
@@ -47,7 +47,7 @@ const designMembers = [
   },
   {
     id: 2,
-    name: 'Design Member 2',
+    name: 'Khusi Kumari',
     role: 'Design Team Member',
     image: '/pImages/designmember2.jpg',
     email: 'designmember2@example.com',
@@ -56,7 +56,7 @@ const designMembers = [
   },
   {
     id: 3,
-    name: 'Design Member 3',
+    name: 'Prince Choudhary',
     role: 'Design Team Member',
     image: '/pImages/designmember3.jpg',
     email: 'designmember3@example.com',
@@ -65,7 +65,7 @@ const designMembers = [
   },
   {
     id: 4,
-    name: 'Design Member 4',
+    name: 'Amit Yadav',
     role: 'Design Team Member',
     image: '/pImages/designmember4.jpg',
     email: 'designmember4@example.com',
@@ -79,10 +79,7 @@ export default function DesignTeamPage() {
     <div className="min-h-screen bg-gray-100 py-4 px-4 sm:px-6 lg:px-8">
       {/* Design Team Heads Section */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-4">
-        <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-center mb-3 text-gray-800">
-          Design Team Heads
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-[1200px] mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-[900px] mx-auto">
           {designHeads.map((member) => (
             <div key={member.id} 
                  className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 relative aspect-[5/6] w-full group">
@@ -98,13 +95,13 @@ export default function DesignTeamPage() {
 
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent opacity-0 transition-all duration-300 group-hover:opacity-100"></div>
 
-              <div className="absolute bottom-0 left-0 right-0 p-2 bg-black/50 transition-all duration-300 transform group-hover:translate-y-[-5px] group-hover:bg-transparent">
-                <h1 className="text-sm sm:text-base font-bold text-white mb-0.5 text-center">
-                  {member.role}
-                </h1>
-                <p className="text-gray-200 text-center text-xs mb-1">
+              <div className="absolute bottom-0 left-0 right-0 p-2 bg-black/50 transition-all duration-300 transform group-hover:translate-y-[-5px] group-hover:bg-transparent">  
+                <p className="text-gray-200 text-center font-bold text-lg sm:text-lg mb-1">
                   {member.name}
                 </p>
+                <h1 className="text-base sm:text-sm font-normal text-white mb-2 text-center">
+                  {member.role}
+                </h1>
                 <div className="flex justify-center space-x-3">
                   <a href={member.linkedin} 
                      className="transform hover:scale-110 transition-all duration-300">
@@ -133,9 +130,6 @@ export default function DesignTeamPage() {
 
       {/* Design Team Members Section */}
       <div className="max-w-8xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-center mb-3 text-gray-800">
-          Design Team Members
-        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 max-w-[1200px] mx-auto">
           {designMembers.map((member) => (
             <div key={member.id} 
@@ -153,12 +147,13 @@ export default function DesignTeamPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent opacity-0 transition-all duration-300 group-hover:opacity-100"></div>
 
               <div className="absolute bottom-0 left-0 right-0 p-2 bg-black/50 transition-all duration-300 transform group-hover:translate-y-[-5px] group-hover:bg-transparent">
-                <h1 className="text-sm sm:text-base font-bold text-white mb-0.5 text-center">
-                  {member.role}
-                </h1>
-                <p className="text-gray-200 text-center text-xs mb-1">
+               
+                <p className="text-gray-200 text-center font-bold text-lg sm:text-lg mb-1">
                   {member.name}
                 </p>
+                <h1 className="text-base sm:text-sm font-normal text-white mb-2 text-center">
+                  {member.role}
+                </h1>
                 <div className="flex justify-center space-x-3">
                   <a href={member.linkedin} 
                      className="transform hover:scale-110 transition-all duration-300">

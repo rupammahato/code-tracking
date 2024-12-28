@@ -7,7 +7,7 @@ import { MdEmail } from 'react-icons/md'
 const webHeads = [
   {
     id: 1,
-    name: 'Web Head Name 1',
+    name: 'Rupam Mahato',
     role: 'Web Team Head',
     image: '/pImages/webhead1.jpg',
     email: 'webhead1@example.com',
@@ -16,7 +16,7 @@ const webHeads = [
   },
   {
     id: 2,
-    name: 'Web Head Name 2',
+    name: 'Sabavath Dheeraj Chowhan',
     role: 'Web Team Head',
     image: '/pImages/webhead2.jpg',
     email: 'webhead2@example.com',
@@ -29,8 +29,8 @@ const webHeads = [
 const webMembers = [
   {
     id: 1,
-    name: 'Web Member Name 1',
-    role: 'Web Developer',
+    name: 'Durgesh Kumar',
+    role: 'Web Team Member',
     image: '/pImages/webmember1.jpg',
     email: 'webmember1@example.com',
     linkedin: 'https://linkedin.com/in/webmember1',
@@ -38,8 +38,8 @@ const webMembers = [
   },
   {
     id: 2,
-    name: 'Web Member Name 2',
-    role: 'Web Developer',
+    name: 'Anurag Ranjan',
+    role: 'Web Team Member',
     image: '/pImages/webmember2.jpg',
     email: 'webmember2@example.com',
     linkedin: 'https://linkedin.com/in/webmember2',
@@ -47,8 +47,8 @@ const webMembers = [
   },
   {
     id: 3,
-    name: 'Web Member Name 3',
-    role: 'Web Developer',
+    name: 'Shashank Pandya',
+    role: 'Web Team Member',
     image: '/pImages/webmember3.jpg',
     email: 'webmember3@example.com',
     linkedin: 'https://linkedin.com/in/webmember3',
@@ -61,9 +61,6 @@ export default function WebTeamPage() {
     <div className="min-h-screen bg-gray-100 py-4 px-4 sm:px-6 lg:px-8">
       {/* Web Team Heads Section */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-4">
-        <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-center mb-3 text-gray-800">
-          Web Team Heads
-        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-2xl mx-auto">
           {webHeads.map((member) => (
             <div key={member.id} 
@@ -81,12 +78,13 @@ export default function WebTeamPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent opacity-0 transition-all duration-300 group-hover:opacity-100"></div>
 
               <div className="absolute bottom-0 left-0 right-0 p-2 bg-black/50 transition-all duration-300 transform group-hover:translate-y-[-5px] group-hover:bg-transparent">
-                <h1 className="text-sm sm:text-base font-bold text-white mb-0.5 text-center">
-                  {member.role}
-                </h1>
-                <p className="text-gray-200 text-center text-xs mb-1">
+                
+                <p className="text-gray-200 text-center font-bold text-lg sm:text-lg mb-1">
                   {member.name}
                 </p>
+                <h1 className="text-base sm:text-sm font-normal text-white mb-2 text-center">
+                  {member.role}
+                </h1>
                 <div className="flex justify-center space-x-3">
                   <a href={member.linkedin} 
                      className="transform hover:scale-110 transition-all duration-300">
@@ -115,9 +113,6 @@ export default function WebTeamPage() {
 
       {/* Web Team Members Section */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-center mb-3 text-gray-800">
-          Web Team Members
-        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {webMembers.map((member) => (
             <div key={member.id} 
@@ -135,12 +130,13 @@ export default function WebTeamPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent opacity-0 transition-all duration-300 group-hover:opacity-100"></div>
 
               <div className="absolute bottom-0 left-0 right-0 p-2 bg-black/50 transition-all duration-300 transform group-hover:translate-y-[-5px] group-hover:bg-transparent">
-                <h1 className="text-sm sm:text-base font-bold text-white mb-0.5 text-center">
-                  {member.role}
-                </h1>
-                <p className="text-gray-200 text-center text-xs mb-1">
+                
+                <p className="text-gray-200 text-center font-bold text-lg sm:text-lg mb-1">
                   {member.name}
                 </p>
+                <h1 className="text-base sm:text-sm font-normal text-white mb-2 text-center">
+                  {member.role}
+                </h1>
                 <div className="flex justify-center space-x-3">
                   <a href={member.linkedin} 
                      className="transform hover:scale-110 transition-all duration-300">

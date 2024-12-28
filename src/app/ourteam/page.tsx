@@ -13,7 +13,7 @@ const headOfDepartment = {
   title: 'Head of the Department',
   department: 'Department of Civil Engineering',
   email: 'djsen@civil.iitkgp.ac.in',
-  website: 'https://professor1-website.com'
+  website: 'https://scholar.google.com/citations?user=7Gs3fXMAAAAJ&hl=en'
 };
 
 const chairpersons = [
@@ -33,7 +33,7 @@ const chairpersons = [
     title: 'Chairperson (Megalith 2025)',
     department: 'Department of Civil Engineering',
     email: 'ksreddy@civil.iitkgp.ac.in',
-    website: 'https://professor3-website.com'
+    website: 'https://iitkgp.irins.org/profile/1591'
   }
 ];
 
@@ -45,8 +45,8 @@ const executives = [
     role: 'Vice President',
     image: '/OurTeamImages/p4.jpeg',
     email: 'vp@example.com',
-    linkedin: 'https://linkedin.com/in/vp',
-    facebook: 'https://facebook.com/vp'
+    linkedin: 'https://www.linkedin.com/in/naman-shankar-2a66b0238',
+    facebook: 'https://www.facebook.com/profile.php?id=100073325747138'
   },
   {
     id: 2,
@@ -54,8 +54,8 @@ const executives = [
     role: 'Executive Advisor',
     image: '/OurTeamImages/p5.jpg',
     email: 'advisor@example.com',
-    linkedin: 'https://linkedin.com/in/advisor',
-    facebook: 'https://facebook.com/advisor'
+    linkedin: 'https://www.linkedin.com/in/abhijeet-nigam-605967223',
+    facebook: 'https://www.facebook.com/abhijeet.nigam.5682'
   },
   {
     id: 3,
@@ -63,8 +63,8 @@ const executives = [
     role: 'Treasurer',
     image: '/OurTeamImages/p6.jpg',
     email: 'treasurer@example.com',
-    linkedin: 'https://linkedin.com/in/treasurer',
-    facebook: 'https://facebook.com/treasurer'
+    linkedin: 'https://www.linkedin.com/in/adityapandeyiitkgp',
+    facebook: 'https://www.facebook.com/profile.php?id=100077353116042'
   }
 ];
 
@@ -73,10 +73,10 @@ const coordinators = [
     id: 1,
     name: 'Islavath Mohan Naik',
     role: 'Events Coordinator',
-    image: '/OurTeamImages/rupam.jpg',
+    image: '/OurTeamImages/rupa.jpg',
     email: 'coordinator1@example.com',
-    linkedin: 'https://linkedin.com/in/coordinator1',
-    facebook: 'https://facebook.com/coordinator1'
+    linkedin: 'https://www.linkedin.com/in/mohan-naik-942569228',
+    facebook: 'https://www.facebook.com/profile.php?id=100013401311744'
   },
   {
     id: 2,
@@ -84,8 +84,8 @@ const coordinators = [
     role: 'Logistics Coordinator',
     image: '/OurTeamImages/c2.jpg',
     email: 'coordinator2@example.com',
-    linkedin: 'https://linkedin.com/in/coordinator2',
-    facebook: 'https://facebook.com/coordinator2'
+    linkedin: 'https://www.linkedin.com/in/kartheek-valeti-3b1289229',
+    facebook: 'https://www.facebook.com/profile.php?id=100071355754133'
   },
   {
     id: 3,
@@ -93,8 +93,8 @@ const coordinators = [
     role: 'Logistics Coordinator',
     image: '/OurTeamImages/c3.jpg',
     email: 'coordinator3@example.com',
-    linkedin: 'https://linkedin.com/in/coordinator3',
-    facebook: 'https://facebook.com/coordinator3'
+    linkedin: 'https://www.linkedin.com/in/anjana-jawahar-a28ba8204/',
+    facebook: 'https://www.facebook.com/anjana.jawahar.9/'
   },
   {
     id: 4,
@@ -102,8 +102,8 @@ const coordinators = [
     role: 'Publicity Coordinator',
     image: '/OurTeamImages/c4.jpg',
     email: 'coordinator4@example.com',
-    linkedin: 'https://linkedin.com/in/coordinator4',
-    facebook: 'https://facebook.com/coordinator4'
+    linkedin: 'https://www.linkedin.com/in/shivangi-singh-30aba0244',
+    facebook: 'https://www.facebook.com/profile.php?id=100075163550918'
   },
   {
     id: 5,
@@ -111,51 +111,78 @@ const coordinators = [
     role: 'Sponsorship and Marketing Coordinator',
     image: '/OurTeamImages/c5.jpg',
     email: 'coordinator5@example.com',
-    linkedin: 'https://linkedin.com/in/coordinator5',
-    facebook: 'https://facebook.com/coordinator5'
+    linkedin: 'https://www.linkedin.com/in/pooja-saini-0919b3244',
+    facebook: 'https://www.facebook.com/profile.php?id=100076298028648&sk=about&section=year-overviews'
   }
 ];
 
 
 export default function ProfilePage() {
   return (
-    <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#091F46] py-12 px-4 sm:px-6 lg:px-8">
+
+      {/* Team Navigation */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-[-15] sm:mt-[-10] mb-[15] sm:mb-[10]">
+        <div className="flex sm:flex-row justify-center items-center gap-4 sm:gap-8">
+          <Link
+            href="/ourteam/design"
+            className="px-5 py-2 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 group 
+             hover:bg-[#091F46]  hover:-translate-y-0.5"
+          > 
+            <span className="text-gray-800 font-medium group-hover:text-[#E9E4DE]">
+              Design Team
+            </span>
+            <div className="h-0.5 w-0 group-hover:w-full bg-white transition-all duration-300"></div>
+          </Link>
+
+          <Link
+            href="/ourteam/web"
+            className="px-5 py-2 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 group
+            hover:bg-[#091F46]   hover:-translate-y-0.5"
+          >
+            <span className="text-gray-800 font-medium group-hover:text-[#E9E4DE]">
+              Web Team
+            </span>
+            <div className="h-0.5 w-0 group-hover:w-full bg-white transition-all duration-300"></div>
+          </Link>
+
+          <Link
+            href="/ourteam/core"
+            className="px-5 py-2 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 group
+            hover:bg-[#091F46]   hover:-translate-y-0.5"
+          >
+            <span className="text-gray-800 font-medium group-hover:text-[#E9E4DE]">
+              Core Team
+            </span>
+            <div className="h-0.5 w-0 group-hover:w-full bg-white transition-all duration-300"></div>
+          </Link>
+        </div>
+      </div>
+
+
       {/* Head of Department Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 sm:mb-20">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif text-center mb-6 sm:mb-8 lg:mb-12 text-gray-800">
+      <div className="max-w-7xl px-6 py-12 bg-gradient-to-r from-blue-100 via-white to-blue-100 shadow-lg">
+        <h2 className="text-3xl font-serif font-bold text-center text-blue-900 mb-6">
           Head of Department
         </h2>
-        <div className="max-w-sm mx-auto">
-          <div className="bg-white rounded-lg shadow-md overflow-hidden relative aspect-[4/5] w-full">
-            <div className="absolute inset-0 bg-white">
-              <Image
-                src={headOfDepartment.image}
-                alt={headOfDepartment.name}
-                fill
-                className="object-contain"
-                priority={true}
-              />
-            </div>
-
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent opacity-0 transition-all duration-300 group-hover:opacity-100"></div>
-
-            <div className="absolute bottom-0 left-0 right-0 p-3 bg-white/50">
-              <h1 className="text-base sm:text-lg font-serif font-bold text-black mb-0.5 text-center">
-                {headOfDepartment.name}
-              </h1>
-              <p className="text-gray-700 text-center text-xs sm:text-sm mb-1 font-serif">
-                {headOfDepartment.title}
-                <br />
-                {headOfDepartment.department}
-              </p>
-              <div className="flex justify-center space-x-4">
-                <a href={`mailto:${headOfDepartment.email}`}
-                  className="text-black hover:text-gray-700">
-                  <MdEmail className="w-4 h-4" />
+        <div className="flex flex-col items-center space-y-4">
+          <div className="relative w-64 h-80 rounded-lg overflow-hidden shadow-md group">
+            <Image
+              src={headOfDepartment.image}
+              alt={headOfDepartment.name}
+              fill
+              className="object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+            <div className="absolute"></div>
+            <div className="absolute bottom-0 w-full p-2 bg-black/60 text-white">
+              <h3 className="text-base font-bold text-center">{headOfDepartment.name}</h3>
+              <p className="text-sm text-center">{headOfDepartment.title}</p>
+              <div className="flex justify-center space-x-3 mt-3">
+                <a href={`mailto:${headOfDepartment.email}`} className="hover:scale-110">
+                  <MdEmail className="w-5 h-5 text-white" />
                 </a>
-                <a href={headOfDepartment.website}
-                  className="text-black hover:text-gray-700">
-                  <FaGlobe className="w-4 h-4" />
+                <a href={headOfDepartment.website} className="hover:scale-110">
+                  <FaGlobe className="w-5 h-5 text-white" />
                 </a>
               </div>
             </div>
@@ -164,11 +191,11 @@ export default function ProfilePage() {
       </div>
 
       {/* Chairpersons Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 sm:mb-20">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif text-center mb-6 sm:mb-8 lg:mb-12 text-gray-800">
+      <div className="max-w-7xl mx-auto px-6 py-12 bg-gradient-to-r from-blue-100 via-white to-blue-100 shadow-lg">
+        <h2 className="text-3xl font-serif font-bold text-center text-blue-900 mb-6">
           Chairpersons
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 max-w-xl mx-auto">
           {chairpersons.map((professor) => (
             <div key={professor.id}
               className="bg-white rounded-lg shadow-md overflow-hidden relative aspect-[4/5] w-full group">
@@ -177,30 +204,28 @@ export default function ProfilePage() {
                   src={professor.image}
                   alt={professor.name}
                   fill
-                  className="object-contain"
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
                   priority={false}
                 />
               </div>
 
               <div className="absolute inset-0"></div>
 
-              <div className="absolute bottom-0 left-0 right-0 p-3 bg-white/50">
-                <h1 className="text-base sm:text-lg font-serif font-bold text-black mb-0.5 text-center">
+              <div className="absolute bottom-0 w-full p-2 bg-black/60 text-white">
+                <h1 className="text-base font-bold text-center">
                   {professor.name}
                 </h1>
-                <p className="text-gray-700 text-center text-xs sm:text-sm mb-1 font-serif">
+                <p className="text-sm text-center">
                   {professor.title}
                   <br />
                   {professor.department}
                 </p>
-                <div className="flex justify-center space-x-4">
-                  <a href={`mailto:${professor.email}`}
-                    className="text-black hover:text-gray-700">
-                    <MdEmail className="w-4 h-4" />
+                <div className="flex justify-center space-x-3 mt-3">
+                  <a href={`mailto:${professor.email}`} className="hover:scale-110">
+                    <MdEmail className="w-5 h-5 text-white" />
                   </a>
-                  <a href={professor.website}
-                    className="text-black hover:text-gray-700">
-                    <FaGlobe className="w-4 h-4" />
+                  <a href={professor.website} className="hover:scale-110">
+                    <FaGlobe className="w-5 h-5 text-white" />
                   </a>
                 </div>
               </div>
@@ -210,14 +235,14 @@ export default function ProfilePage() {
       </div>
 
       {/* Executive Body Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif text-center mb-6 sm:mb-8 lg:mb-12 text-gray-800">
+      <div className="max-w-7xl px-6 py-12 bg-gradient-to-r from-blue-100 via-white to-blue-100 shadow-lg">
+        <h2 className="text-3xl font-serif font-bold text-center text-blue-900 mb-6">
           Executive Body
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {executives.map((executive) => (
             <div key={executive.id}
-              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 relative aspect-[4/5] w-full group">
+              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 relative aspect-[4/5] w-full group ">
               <div className="absolute inset-0 w-full h-full">
                 <Image
                   src={executive.image}
@@ -231,12 +256,13 @@ export default function ProfilePage() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent opacity-0 transition-all duration-300 group-hover:opacity-100"></div>
 
               <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 bg-black/50 transition-all duration-300 transform group-hover:translate-y-[-10px] group-hover:bg-transparent">
-                <h1 className="text-base sm:text-lg font-bold text-white mb-0.5 text-center">
-                  {executive.role}
-                </h1>
-                <p className="text-gray-200 text-center text-xs sm:text-sm mb-2">
+                
+                <p className="text-gray-200 text-center font-bold text-lg sm:text-lg mb-1">
                   {executive.name}
                 </p>
+                <h1 className="text-base sm:text-sm font-normal text-white mb-2 text-center">
+                  {executive.role}
+                </h1>
                 <div className="flex justify-center space-x-6">
                   <a href={executive.linkedin}
                     className="transform hover:scale-110 transition-all duration-300">
@@ -263,14 +289,10 @@ export default function ProfilePage() {
         </div>
       </div>
 
-
-
-
       {/* Coordinators Section */}
 
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 p-10">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif text-center mb-6 sm:mb-8 lg:mb-12 text-gray-800">
+      <div className="max-w-7xl px-6 py-12 bg-gradient-to-r from-blue-100 via-white to-blue-100 shadow-lg">
+        <h2 className="text-3xl font-serif font-bold text-center text-blue-900 mb-6">
           Coordinators
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
@@ -290,12 +312,13 @@ export default function ProfilePage() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent opacity-0 transition-all duration-300 group-hover:opacity-100"></div>
 
               <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 bg-black/50 transition-all duration-300 transform group-hover:translate-y-[-10px] group-hover:bg-transparent">
-                <h1 className="text-base sm:text-lg font-bold text-white mb-0.5 text-center">
-                  {coordinator.role}
-                </h1>
-                <p className="text-gray-200 text-center text-xs sm:text-sm mb-2">
+                
+                <p className="text-gray-200 text-center font-bold text-lg sm:text-lg mb-1">
                   {coordinator.name}
                 </p>
+                <h1 className="text-base sm:text-sm font-normal text-white mb-2 text-center">
+                  {coordinator.role}
+                </h1>
                 <div className="flex justify-center space-x-6">
                   <a href={coordinator.linkedin}
                     className="transform hover:scale-110 transition-all duration-300">
@@ -319,45 +342,6 @@ export default function ProfilePage() {
               </div>
             </div>
           ))}
-        </div>
-      </div>
-
-
-
-
-
-      {/* Team Navigation */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 sm:mt-20">
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8">
-          <Link
-            href="/ourteam/design"
-            className="px-6 py-3 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 group"
-          >
-            <span className="text-gray-800 font-medium group-hover:text-gray-600">
-              Design Team
-            </span>
-            <div className="h-0.5 w-0 group-hover:w-full bg-gray-600 transition-all duration-300"></div>
-          </Link>
-
-          <Link
-            href="/ourteam/web"
-            className="px-6 py-3 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 group"
-          >
-            <span className="text-gray-800 font-medium group-hover:text-gray-600">
-              Web Team
-            </span>
-            <div className="h-0.5 w-0 group-hover:w-full bg-gray-600 transition-all duration-300"></div>
-          </Link>
-
-          <Link
-            href="/ourteam/core"
-            className="px-6 py-3 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 group"
-          >
-            <span className="text-gray-800 font-medium group-hover:text-gray-600">
-              Core Team
-            </span>
-            <div className="h-0.5 w-0 group-hover:w-full bg-gray-600 transition-all duration-300"></div>
-          </Link>
         </div>
       </div>
 

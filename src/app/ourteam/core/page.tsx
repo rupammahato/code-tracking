@@ -10,27 +10,45 @@ const teams = [
     heads: [
       {
         id: 1,
-        name: 'Publicity Head 1',
+        name: 'Mitesh Sahu',
         role: 'Publicity Team Head',
         image: '/pImages/pubhead1.jpg',
         email: 'pubhead1@example.com',
-        linkedin: 'https://linkedin.com/in/pubhead1',
-        facebook: 'https://facebook.com/pubhead1'
+        linkedin: 'https://www.linkedin.com/in/mitesh-sahu-4780b7259',
+        facebook: 'https://www.facebook.com/aryan.meena.54922?mibextid=ZbWKwL'
       },
       {
         id: 2,
-        name: 'Publicity Head 2',
+        name: 'Nakshatra Piplad',
+        role: 'Publicity Team Head',
+        image: '/pImages/pubhead2.jpg',
+        email: 'pubhead2@example.com',
+        linkedin: 'https://www.linkedin.com/in/nakshatra-piplad-b90283254',
+        facebook: 'https://www.facebook.com/profile.php?id=100087394675451&mibextid=ZbWKwL'
+      },
+      {
+        id: 3,
+        name: 'Alok Anand',
+        role: 'Publicity Team Head',
+        image: '/pImages/pubhead2.jpg',
+        email: 'pubhead2@example.com',
+        linkedin: 'https://www.linkedin.com/in/alok-anand-5490b0257',
+        facebook: 'https://www.facebook.com/profile.php?id=100008408595358&mibextid=ZbWKwL'
+      },
+      {
+        id: 4,
+        name: 'Pulivarthy Ephraim El Raj',
         role: 'Publicity Team Head',
         image: '/pImages/pubhead2.jpg',
         email: 'pubhead2@example.com',
         linkedin: 'https://linkedin.com/in/pubhead2',
-        facebook: 'https://facebook.com/pubhead2'
+        facebook: 'https://www.facebook.com/ephraimelraj.pulivarthi'
       }
     ],
     members: [
       {
         id: 1,
-        name: 'Publicity Member 1',
+        name: 'Shubham Suman',
         role: 'Publicity Team Member',
         image: '/pImages/pubmember1.jpg',
         email: 'pubmember1@example.com',
@@ -39,7 +57,16 @@ const teams = [
       },
       {
         id: 2,
-        name: 'Publicity Member 2',
+        name: 'Saugata Malakar',
+        role: 'Publicity Team Member',
+        image: '/pImages/pubmember2.jpg',
+        email: 'pubmember2@example.com',
+        linkedin: 'https://linkedin.com/in/pubmember2',
+        facebook: 'https://facebook.com/pubmember2'
+      },
+      {
+        id: 3,
+        name: 'Pratheeka',
         role: 'Publicity Team Member',
         image: '/pImages/pubmember2.jpg',
         email: 'pubmember2@example.com',
@@ -53,7 +80,7 @@ const teams = [
     heads: [
       {
         id: 1,
-        name: 'Logistics Head 1',
+        name: 'Aman Meena',
         role: 'Logistics Team Head',
         image: '/pImages/loghead1.jpg',
         email: 'loghead1@example.com',
@@ -62,18 +89,18 @@ const teams = [
       },
       {
         id: 2,
-        name: 'Logistics Head 2',
+        name: 'Yashika',
         role: 'Logistics Team Head',
         image: '/pImages/loghead2.jpg',
         email: 'loghead2@example.com',
-        linkedin: 'https://linkedin.com/in/loghead2',
-        facebook: 'https://facebook.com/loghead2'
+        linkedin: 'https://www.linkedin.com/in/yashika-979318259',
+        facebook: 'https://www.facebook.com/profile.php?id=100087209785135&mibextid=ZbWKwL'
       }
     ],
     members: [
       {
         id: 1,
-        name: 'Logistics Member 1',
+        name: 'Pratik Ghosh',
         role: 'Logistics Team Member',
         image: '/pImages/logmember1.jpg',
         email: 'logmember1@example.com',
@@ -82,12 +109,12 @@ const teams = [
       },
       {
         id: 2,
-        name: 'Logistics Member 2',
+        name: 'Sneha Mudam',
         role: 'Logistics Team Member',
-        image: '/pImages/logmember2.jpg',
-        email: 'logmember2@example.com',
-        linkedin: 'https://linkedin.com/in/logmember2',
-        facebook: 'https://facebook.com/logmember2'
+        image: '/pImages/logmember1.jpg',
+        email: 'logmember1@example.com',
+        linkedin: 'https://linkedin.com/in/logmember1',
+        facebook: 'https://facebook.com/logmember1'
       }
     ]
   },
@@ -96,7 +123,7 @@ const teams = [
     heads: [
       {
         id: 1,
-        name: 'Marketing Head 1',
+        name: 'Karakvalasa Venkata Gnaneswar',
         role: 'Marketing Team Head',
         image: '/pImages/markhead1.jpg',
         email: 'markhead1@example.com',
@@ -105,7 +132,16 @@ const teams = [
       },
       {
         id: 2,
-        name: 'Marketing Head 2',
+        name: 'Sandeep Kumar Meena',
+        role: 'Marketing Team Head',
+        image: '/pImages/markhead2.jpg',
+        email: 'markhead2@example.com',
+        linkedin: 'https://www.linkedin.com/in/sandeep-kumar-meena-6bab81256',
+        facebook: 'https://facebook.com/markhead2'
+      },
+      {
+        id: 3,
+        name: 'Soham Mallik',
         role: 'Marketing Team Head',
         image: '/pImages/markhead2.jpg',
         email: 'markhead2@example.com',
@@ -116,7 +152,7 @@ const teams = [
     members: [
       {
         id: 1,
-        name: 'Marketing Member 1',
+        name: 'Aryan Raj Chourasia',
         role: 'Marketing Team Member',
         image: '/pImages/markmember1.jpg',
         email: 'markmember1@example.com',
@@ -125,7 +161,25 @@ const teams = [
       },
       {
         id: 2,
-        name: 'Marketing Member 2',
+        name: 'Ashutosh Pallai',
+        role: 'Marketing Team Member',
+        image: '/pImages/markmember2.jpg',
+        email: 'markmember2@example.com',
+        linkedin: 'https://linkedin.com/in/markmember2',
+        facebook: 'https://facebook.com/markmember2'
+      },
+      {
+        id: 3,
+        name: 'Ayush Chandra Dey',
+        role: 'Marketing Team Member',
+        image: '/pImages/markmember2.jpg',
+        email: 'markmember2@example.com',
+        linkedin: 'https://linkedin.com/in/markmember2',
+        facebook: 'https://facebook.com/markmember2'
+      },
+      {
+        id: 4,
+        name: 'Gouni Sreenija',
         role: 'Marketing Team Member',
         image: '/pImages/markmember2.jpg',
         email: 'markmember2@example.com',
@@ -139,27 +193,27 @@ const teams = [
     heads: [
       {
         id: 1,
-        name: 'Events Head 1',
+        name: 'Adrij Bhattacharya',
         role: 'Events Team Head',
         image: '/pImages/eventhead1.jpg',
         email: 'eventhead1@example.com',
-        linkedin: 'https://linkedin.com/in/eventhead1',
-        facebook: 'https://facebook.com/eventhead1'
+        linkedin: 'linkedin.com/in/adrij-bhattacharya-9180bb259',
+        facebook: 'https://www.facebook.com/adrij.bhattacharya.35/'
       },
       {
         id: 2,
-        name: 'Events Head 2',
+        name: 'Shrewa Shree Konika P Bharati',
         role: 'Events Team Head',
         image: '/pImages/eventhead2.jpg',
         email: 'eventhead2@example.com',
-        linkedin: 'https://linkedin.com/in/eventhead2',
-        facebook: 'https://facebook.com/eventhead2'
+        linkedin: 'https://www.linkedin.com/in/shrewa-shree-konika-p-bharati-768457258',
+        facebook: 'https://www.facebook.com/shrewashree.dey?mibextid=ZbWKwL'
       }
     ],
     members: [
       {
         id: 1,
-        name: 'Events Member 1',
+        name: 'Krupal Thakre',
         role: 'Events Team Member',
         image: '/pImages/eventmember1.jpg',
         email: 'eventmember1@example.com',
@@ -168,7 +222,16 @@ const teams = [
       },
       {
         id: 2,
-        name: 'Events Member 2',
+        name: 'Mayukh Mondal',
+        role: 'Events Team Member',
+        image: '/pImages/eventmember2.jpg',
+        email: 'eventmember2@example.com',
+        linkedin: 'https://linkedin.com/in/eventmember2',
+        facebook: 'https://facebook.com/eventmember2'
+      },
+      {
+        id: 3,
+        name: 'Ajayendra Kumar Bansod',
         role: 'Events Team Member',
         image: '/pImages/eventmember2.jpg',
         email: 'eventmember2@example.com',
@@ -187,16 +250,13 @@ export default function CoreTeamPage() {
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-6 sm:mb-8 lg:mb-12 text-gray-800">
             {team.name}
           </h2>
-          
+
           {/* Team Heads Section */}
           <div className="mb-12 sm:mb-16">
-            <h3 className="text-xl sm:text-2xl font-bold text-center mb-6 sm:mb-8 text-gray-700">
-              Team Heads
-            </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 max-w-2xl mx-auto">
               {team.heads.map((member) => (
-                <div key={member.id} 
-                     className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 relative aspect-[4/5] w-full group">
+                <div key={member.id}
+                  className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 relative aspect-[4/5] w-full group">
                   <div className="absolute inset-0 w-full h-full">
                     <Image
                       src={member.image}
@@ -210,27 +270,27 @@ export default function CoreTeamPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent opacity-0 transition-all duration-300 group-hover:opacity-100"></div>
 
                   <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 bg-black/50 transition-all duration-300 transform group-hover:translate-y-[-10px] group-hover:bg-transparent">
-                    <h1 className="text-base sm:text-lg font-bold text-white mb-0.5 text-center">
-                      {member.role}
-                    </h1>
-                    <p className="text-gray-200 text-center text-xs sm:text-sm mb-2">
+                    <p className="text-gray-200 text-center font-bold text-lg sm:text-lg mb-1">
                       {member.name}
                     </p>
+                    <h1 className="text-base sm:text-sm font-normal text-white mb-2 text-center">
+                      {member.role}
+                    </h1>
                     <div className="flex justify-center space-x-6">
-                      <a href={member.linkedin} 
-                         className="transform hover:scale-110 transition-all duration-300">
+                      <a href={member.linkedin}
+                        className="transform hover:scale-110 transition-all duration-300">
                         <div className="p-1.5 rounded-full bg-[#0077b5] hover:bg-gradient-to-r hover:from-[#0077b5] hover:to-[#00a0dc] transition-all duration-300 hover:shadow-lg hover:shadow-[#0077b5]/30">
                           <FaLinkedinIn className="w-3.5 h-3.5 text-white" />
                         </div>
                       </a>
-                      <a href={member.facebook} 
-                         className="transform hover:scale-110 transition-all duration-300">
+                      <a href={member.facebook}
+                        className="transform hover:scale-110 transition-all duration-300">
                         <div className="p-1.5 rounded-full bg-[#1877f2] hover:bg-gradient-to-r hover:from-[#1877f2] hover:to-[#2998ff] transition-all duration-300 hover:shadow-lg hover:shadow-[#1877f2]/30">
                           <FaFacebookF className="w-3.5 h-3.5 text-white" />
                         </div>
                       </a>
-                      <a href={`mailto:${member.email}`} 
-                         className="transform hover:scale-110 transition-all duration-300">
+                      <a href={`mailto:${member.email}`}
+                        className="transform hover:scale-110 transition-all duration-300">
                         <div className="p-1.5 rounded-full bg-[#ea4335] hover:bg-gradient-to-r hover:from-[#ea4335] hover:to-[#ff5a4f] transition-all duration-300 hover:shadow-lg hover:shadow-[#ea4335]/30">
                           <MdEmail className="w-3.5 h-3.5 text-white" />
                         </div>
@@ -244,13 +304,10 @@ export default function CoreTeamPage() {
 
           {/* Team Members Section */}
           <div>
-            <h3 className="text-xl sm:text-2xl font-bold text-center mb-6 sm:mb-8 text-gray-700">
-              Team Members
-            </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 max-w-2xl mx-auto">
               {team.members.map((member) => (
-                <div key={member.id} 
-                     className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 relative aspect-[4/5] w-full group">
+                <div key={member.id}
+                  className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 relative aspect-[4/5] w-full group">
                   <div className="absolute inset-0 w-full h-full">
                     <Image
                       src={member.image}
@@ -264,27 +321,27 @@ export default function CoreTeamPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent opacity-0 transition-all duration-300 group-hover:opacity-100"></div>
 
                   <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 bg-black/50 transition-all duration-300 transform group-hover:translate-y-[-10px] group-hover:bg-transparent">
-                    <h1 className="text-base sm:text-lg font-bold text-white mb-0.5 text-center">
-                      {member.role}
-                    </h1>
-                    <p className="text-gray-200 text-center text-xs sm:text-sm mb-2">
+                    <p className="text-gray-200 text-center font-bold text-lg sm:text-lg mb-1">
                       {member.name}
                     </p>
+                    <h1 className="text-base sm:text-sm font-normal text-white mb-2 text-center">
+                      {member.role}
+                    </h1>
                     <div className="flex justify-center space-x-6">
-                      <a href={member.linkedin} 
-                         className="transform hover:scale-110 transition-all duration-300">
+                      <a href={member.linkedin}
+                        className="transform hover:scale-110 transition-all duration-300">
                         <div className="p-1.5 rounded-full bg-[#0077b5] hover:bg-gradient-to-r hover:from-[#0077b5] hover:to-[#00a0dc] transition-all duration-300 hover:shadow-lg hover:shadow-[#0077b5]/30">
                           <FaLinkedinIn className="w-3.5 h-3.5 text-white" />
                         </div>
                       </a>
-                      <a href={member.facebook} 
-                         className="transform hover:scale-110 transition-all duration-300">
+                      <a href={member.facebook}
+                        className="transform hover:scale-110 transition-all duration-300">
                         <div className="p-1.5 rounded-full bg-[#1877f2] hover:bg-gradient-to-r hover:from-[#1877f2] hover:to-[#2998ff] transition-all duration-300 hover:shadow-lg hover:shadow-[#1877f2]/30">
                           <FaFacebookF className="w-3.5 h-3.5 text-white" />
                         </div>
                       </a>
-                      <a href={`mailto:${member.email}`} 
-                         className="transform hover:scale-110 transition-all duration-300">
+                      <a href={`mailto:${member.email}`}
+                        className="transform hover:scale-110 transition-all duration-300">
                         <div className="p-1.5 rounded-full bg-[#ea4335] hover:bg-gradient-to-r hover:from-[#ea4335] hover:to-[#ff5a4f] transition-all duration-300 hover:shadow-lg hover:shadow-[#ea4335]/30">
                           <MdEmail className="w-3.5 h-3.5 text-white" />
                         </div>
