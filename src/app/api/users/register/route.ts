@@ -14,12 +14,13 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
             email,
             password,
             confirmpassword,
-            yearOfStudy,
             phone,
             college,
-            place,
+            state,
+            city,
             gender,
-            megalithId,
+            yearOfStudy,
+            mipId,
         } = await req.json();
 
         if (!name || !email || !password || !confirmpassword) {
@@ -43,16 +44,17 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
             name,
             email: normalizedEmail,
             password: hashedPassword,
-            yearOfStudy,
             phone,
             college,
-            place,
+            state,
+            city,
             gender,
+            yearOfStudy,
+            mipId,
             verificationToken,
             verificationTokenExpires,
             isVerified: false,
             isAdmin: false,
-            megalithId,
         });
 
         await user.save();

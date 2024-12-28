@@ -12,19 +12,8 @@ import {
   Button,
 } from "@nextui-org/react";
 import { usePathname } from "next/navigation";
-
-export const AcmeLogo = () => {
-  return (
-    <svg fill="none" height="36" viewBox="0 0 32 32" width="36">
-      <path
-        clipRule="evenodd"
-        d="M17.6482 10.1305L15.8785 7.02583L7.02979 22.5499H10.5278L17.6482 10.1305ZM19.8798 14.0457L18.11 17.1983L19.394 19.4511H16.8453L15.1056 22.5499H24.7272L19.8798 14.0457Z"
-        fill="currentColor"
-        fillRule="evenodd"
-      />
-    </svg>
-  );
-};
+import logo from "./assets/megalith-logo.png"
+import Image from "next/image";
 
 export default function NavbarSection() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -36,15 +25,12 @@ export default function NavbarSection() {
   }, []);
 
   const menuItems = [
-    "Profile",
     "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
+    "Home",
+    "Events & Workshops",
+    "Sponsors",
+    "Our Team",
+    "MIP",
     "Log Out",
   ];
 
@@ -79,9 +65,9 @@ export default function NavbarSection() {
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
-        <NavbarBrand>
-          <AcmeLogo />
-          <p className="font-bold text-inherit">MEGALITH</p>
+        <NavbarBrand className="cursor-pointer" >
+          <Image src={logo} alt="Megalith" className="h-7 w-7 mr-2" />
+          <p className="font-bold cursor-pointer text-inherit">MEGALITH</p>
         </NavbarBrand>
       </NavbarContent>
 
@@ -134,10 +120,10 @@ export default function NavbarSection() {
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
-          <Link href="/login">Login</Link>
+          <Link href="/login" className="text-[#e9e4de] hover:text-gray-200" >Login</Link>
         </NavbarItem>
         <NavbarItem>
-          <Button as={Link} color="primary" href="/registration" variant="flat">
+          <Button as={Link} className=" bg-[#e9e4de] text-[#091f46] font-semibold " color="primary" href="/registration" variant="flat">
             Register
           </Button>
         </NavbarItem>

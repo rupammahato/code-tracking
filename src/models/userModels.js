@@ -14,7 +14,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true, "Please provide a password"],
     },
-    megalithId: {
+    mipId: {
         type: String,
     },
     yearOfStudy: {
@@ -29,9 +29,11 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    place: {
+    state: {
         type: String,
-        required: true,
+    },
+    city: {
+        type: String,
     },
     gender: {
         type: String,
