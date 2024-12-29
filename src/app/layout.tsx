@@ -5,6 +5,9 @@ import "./globals.css";
 import "./fonts.css";
 import { ThemeInitializer } from "@/components/ThemeInitializer";
 import  NavbarSection from "@/components/Navbar"
+import { Toaster } from "@/components/ui/toaster"
+import Footer from "@/components/Footer";
+
 
 export const metadata: Metadata = {
   title: "Megalith 2025",
@@ -27,6 +30,8 @@ export default function RootLayout({
             <ThemeInitializer />
             <NavbarSection />
             {children}
+            <Footer />
+            <Toaster />
           </ThemeProvider>
         </Providers>
       </body>
