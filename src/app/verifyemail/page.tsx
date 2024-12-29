@@ -3,15 +3,17 @@
 import { useState, useEffect, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
-import { Mail, CheckCircle, AlertCircle, ArrowLeft } from 'lucide-react'
+import { Mail, CheckCircle, AlertCircle, ArrowLeft, Loader2 } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import axios from 'axios'
 
 export default function VerifyEmail() {
   const [otp, setOtp] = useState<string[]>(new Array(6).fill(''))
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
   const [isClient, setIsClient] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
   const inputRefs = useRef<HTMLInputElement[]>([])
   const router = useRouter()
 
@@ -36,23 +38,33 @@ export default function VerifyEmail() {
     }
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
     if (otp.some((digit) => digit === '')) {
-      setErrorMessage('Please fill all the fields.')
-      return
+      setErrorMessage('Please fill all the fields.');
+      return;
     }
 
-    const enteredOtp = otp.join('')
-    if (enteredOtp !== '123456') { 
-      setErrorMessage('Invalid OTP. Please try again.')
-      return
-    }
+    const enteredOtp = otp.join('');
+    setIsLoading(true);
+    try {
+      const response = await axios.post('/api/users/verifyemail', { code: enteredOtp });
 
-    setTimeout(() => {
-      setIsSubmitted(true)
-      setErrorMessage('')
-    }, 1000)
+      if (response.data.success) {
+        setIsSubmitted(true);
+        setErrorMessage('');
+        setTimeout(() => {
+          router.push('/login');
+        }, 1000);
+      } else {
+        setErrorMessage(response.data.message || 'Invalid OTP. Please try again.');
+      }
+    } catch (error) {
+      console.error('Verification error:', error);
+      setErrorMessage('An error occurred. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   const handleGoBack = () => {
@@ -141,8 +153,8 @@ export default function VerifyEmail() {
               </motion.p>
             )}
 
-            <Button type="submit" className="w-full bg-slate-800 hover:bg-slate-900">
-              Verify Email
+            <Button type="submit" className="w-full bg-slate-800 hover:bg-slate-900" disabled={isLoading}>
+              {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : 'Verify Email'}
             </Button>
           </motion.form>
         ) : (
@@ -166,7 +178,7 @@ export default function VerifyEmail() {
           </motion.div>
         )}
 
-        <motion.p
+        {/* <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
@@ -174,7 +186,7 @@ export default function VerifyEmail() {
         >
           Didn’t receive the OTP?{' '}
           <a href="#" className="text-[#091f46] font-semibold hover:underline">Resend OTP</a>
-        </motion.p>
+        </motion.p> */}
       </motion.div>
     </div>
   )

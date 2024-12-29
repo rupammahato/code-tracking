@@ -2,8 +2,19 @@
 import { SignInForm } from "@/components/SigninForm";
 import { motion } from 'framer-motion'
 import { ArrowLeft } from 'lucide-react'
+import { useEffect, useState } from 'react';
 
 export default function SignInPage() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return null;
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-950 to-gray-950 flex items-center justify-center p-4">
       <div className="bg-white rounded-lg shadow-xl overflow-hidden w-full max-w-md p-8 relative">

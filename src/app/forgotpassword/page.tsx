@@ -2,24 +2,43 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowLeft, Mail, CheckCircle } from 'lucide-react'
+import { ArrowLeft, Mail, CheckCircle, Loader2 } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import axios from 'axios'
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState('')
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isClient, setIsClient] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
+  const [message, setMessage] = useState('')
 
   useEffect(() => {
     setIsClient(true)
   }, [])
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Here you would typically send a request to your backend
-    // For this example, we'll just simulate a successful submission
-    setTimeout(() => setIsSubmitted(true), 1000)
+    setIsLoading(true)
+    setMessage('')
+    try {
+      const response = await axios.post('/api/users/forgotPassword', { email })
+      setMessage(response.data.message)
+      if (response.data.success) {
+        setIsSubmitted(true)
+      }
+    } catch (error) {
+      if (axios.isAxiosError(error) && error.response) {
+        console.error('Forgot password error response:', error.response.data)
+        setMessage(error.response.data.message || 'An error occurred. Please try again.')
+      } else {
+        console.error('Forgot password error:', error)
+        setMessage('An error occurred. Please try again.')
+      }
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   if (!isClient) {
@@ -72,9 +91,10 @@ export default function ForgotPassword() {
                 <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-800" />
               </div>
             </div>
-            <Button type="submit" className="w-full bg-slate-800 hover:bg-slate-900">
-              Reset Password
+            <Button type="submit" className="w-full bg-slate-800 hover:bg-slate-900" disabled={isLoading}>
+              {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : 'Reset Password'}
             </Button>
+            {message && <p className="text-center text-sm font-medium text-red-600">{message}</p>}
           </motion.form>
         ) : (
           <motion.div

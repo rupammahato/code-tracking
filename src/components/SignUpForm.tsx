@@ -27,17 +27,6 @@ type SignUpFormData = {
   mipId?: string;
 };
 
-async function submitForm(data: SignUpFormData, isRegistration: boolean) {
-  const endpoint = isRegistration ? '/api/users/register' : '/api/users/login';
-  const response = await axios.post(endpoint, data);
-
-  if (response.status !== 201 && response.status !== 200) {
-    throw new Error('Network response was not ok');
-  }
-
-  return response.data;
-}
-
 export function SignUpForm() {
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState('');
@@ -50,10 +39,21 @@ export function SignUpForm() {
     setIsLoading(true);
     setMessage('');
     try {
-      const result = await submitForm(data, true);
-      setMessage(result.message);
+      const { confirmPassword, ...rest } = data;
+      const payload = { ...rest, confirmpassword: confirmPassword };
+      const response = await axios.post('/api/users/register', payload);
+      setMessage(response.data.message);
+      if (response.data.success) {
+        router.push('/verifyemail');
+      }
     } catch (error) {
-      setMessage('An error occurred. Please try again.');
+      if (axios.isAxiosError(error) && error.response) {
+        console.error('Signup error response:', error.response.data);
+        setMessage(error.response.data.message || 'An error occurred. Please try again.');
+      } else {
+        console.error('Signup error:', error);
+        setMessage('An error occurred. Please try again.');
+      }
     } finally {
       setIsLoading(false);
     }
@@ -105,7 +105,7 @@ export function SignUpForm() {
             type="password"
             placeholder="Enter your password"
             {...register('password', { required: 'Password is required', minLength: { value: 6, message: 'Password must be at least 6 characters' } })}
-            className="pl-10 shadow-md shadow-black"
+            className="pl-10 text-[#091f46] shadow-md shadow-black"
           />
           <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-800" size={18} />
         </div>

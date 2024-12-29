@@ -2,9 +2,11 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowLeft, Lock, CheckCircle, Eye, EyeOff } from 'lucide-react'
+import { ArrowLeft, Lock, CheckCircle, Loader2 } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import axios from 'axios'
+import { useRouter, useParams } from 'next/navigation'
 
 export default function ResetPassword() {
   const [newPassword, setNewPassword] = useState('')
@@ -14,12 +16,16 @@ export default function ResetPassword() {
   const [errorMessage, setErrorMessage] = useState('')
   const [showNewPassword, setShowNewPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
+  const router = useRouter()
+  const { token } = useParams()
 
   useEffect(() => {
     setIsClient(true)
-  }, [])
+    console.log('Reset token:', token); // Add this line to log the token value
+  }, [token])
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
     if (newPassword !== confirmPassword) {
@@ -27,18 +33,43 @@ export default function ResetPassword() {
       return
     }
 
-    if (newPassword.length < 8) {
-      setErrorMessage("Password must be at least 8 characters long.")
+    if (newPassword.length < 6) {
+      setErrorMessage("Password must be at least 6 characters long.")
       return
     }
 
-    // Simulate successful submission
-    setTimeout(() => {
-      setIsSubmitted(true)
-      setErrorMessage('')
-    }, 1000)
-  }
+    if (!token) {
+      setErrorMessage("Invalid or expired reset token.")
+      return
+    }
 
+    setIsLoading(true)
+    setErrorMessage('')
+    try {
+      console.log('Sending reset password request with token:', token);
+      const response = await axios.post(`/api/users/resetPassword/${token}`, { password: newPassword })
+      console.log('Reset password response:', response.data);
+      if (response.data.success) {
+        setIsSubmitted(true)
+        setTimeout(() => {
+          router.push('/login')
+        }, 1000)
+      } else {
+        setErrorMessage(response.data.message || 'An error occurred. Please try again.')
+      }
+    } catch (error) {
+      if (axios.isAxiosError(error) && error.response) {
+        console.error('Reset password error response:', error.response.data)
+        setErrorMessage(error.response.data.message || 'An error occurred. Please try again.')
+      } else {
+        console.error('Reset password error:', error)
+        setErrorMessage('An error occurred. Please try again.')
+      }
+    } finally {
+      setIsLoading(false)
+    }
+  }
+  
   if (!isClient) {
     return null
   }
@@ -84,16 +115,9 @@ export default function ResetPassword() {
                   onChange={(e) => setNewPassword(e.target.value)}
                   placeholder="Enter your new password"
                   required
-                  className="pl-10 pr-10 text-gray-900 bg-gray-400 border-gray-800"
+                  className="pl-10 text-gray-900 bg-gray-400 border-gray-800"
                 />
                 <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-800" />
-                <button
-                  type="button"
-                  onClick={() => setShowNewPassword(!showNewPassword)}
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-800"
-                >
-                  {showNewPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
-                </button>
               </div>
             </div>
 
@@ -109,16 +133,9 @@ export default function ResetPassword() {
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   placeholder="Confirm your password"
                   required
-                  className="pl-10 pr-10 text-gray-900  border-gray-800"
+                  className="pl-10 text-gray-900  border-gray-800"
                 />
                 <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-800" />
-                <button
-                  type="button"
-                  onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-800"
-                >
-                  {showConfirmPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
-                </button>
               </div>
             </div>
 
@@ -133,8 +150,8 @@ export default function ResetPassword() {
               </motion.p>
             )}
 
-            <Button type="submit" className="w-full bg-slate-800 hover:bg-slate-900">
-              Reset Password
+            <Button type="submit" className="w-full bg-slate-800 hover:bg-slate-900" disabled={isLoading}>
+            {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : 'Reset Password'}
             </Button>
           </motion.form>
         ) : (
