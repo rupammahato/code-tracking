@@ -1,5 +1,4 @@
 'use client'
-
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
@@ -8,28 +7,12 @@ import { Mail, Lock, Loader2 } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
+import axios from 'axios';
 
 type SignInFormData = {
   email: string;
   password: string;
 };
-
-async function submitForm(data: SignInFormData, isRegistration: boolean) {
-  const endpoint = isRegistration ? '/api/users/register' : '/api/users/login';
-  const response = await fetch(endpoint, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data),
-  });
-
-  if (!response.ok) {
-    throw new Error('Network response was not ok');
-  }
-
-  return response.json();
-}
 
 export function SignInForm() {
   const [isLoading, setIsLoading] = useState(false);
@@ -41,10 +24,19 @@ export function SignInForm() {
     setIsLoading(true);
     setMessage('');
     try {
-      const result = await submitForm(data, false);
-      setMessage(result.message);
+      const response = await axios.post('/api/users/login', data);
+      setMessage(response.data.message);
+      if (response.data.success) {
+        router.push('/dashboard');
+      }
     } catch (error) {
-      setMessage('An error occurred. Please try again.');
+      if (axios.isAxiosError(error) && error.response) {
+        console.error('Login error response:', error.response.data);
+        setMessage(error.response.data.message || 'An error occurred. Please try again.');
+      } else {
+        console.error('Login error:', error);
+        setMessage('An error occurred. Please try again.');
+      }
     } finally {
       setIsLoading(false);
     }
@@ -96,18 +88,17 @@ export function SignInForm() {
           Forgot Password?
         </Button>
       </div>
-      <Button type="submit"  disabled={isLoading} className={`w-full bg-[#091f46] ${isLoading ? 'bg-[#091f46]' : 'hover:bg-gray-900'}`}
-       >
+      <Button type="submit" disabled={isLoading} className={`w-full bg-[#091f46] ${isLoading ? 'bg-[#091f46]' : 'hover:bg-gray-900'}`}>
         {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : 'Sign In'}
       </Button>
-      {message && <p className="text-center text-sm font-medium text-green-600">{message}</p>}
+      {message && <p className="text-center text-sm font-medium text-red-600">{message}</p>}
       <div className="text-center">
         <Button
           variant="link"
           onClick={() => router.push('/registration')}
           className="text-sm text-gray-900 hover:text-[#091f46]"
         >
-          Dont&apos; have an account? Sign Up
+          Don't have an account? Sign Up
         </Button>
       </div>
     </motion.form>

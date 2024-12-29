@@ -2,8 +2,19 @@
 import { SignUpForm } from '@/components/SignUpForm';
 import { motion } from 'framer-motion'
 import { ArrowLeft } from 'lucide-react'
+import { useEffect, useState } from 'react';
 
 export default function SignUpPage() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return null;
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-950 to-gray-950 flex items-center justify-center p-4">
       <div className="bg-gray-100 rounded-lg shadow-xl overflow-hidden w-full max-w-md p-8">
