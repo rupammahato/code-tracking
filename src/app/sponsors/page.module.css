@@ -1,9 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 
+html {
+  scroll-behavior: smooth;
+}
+
 .wrapper {
-  --gradient: linear-gradient(45deg, #ff7c7d, #ffda67);
-  --card: #272524;
-  --button-hover: linear-gradient(45deg, #ffda67, #ff7c7d);
+  --gradient: linear-gradient(45deg, #efbf6a, #e9e4de);
+  --card: #091f46;
+  --button-hover: linear-gradient(45deg, #e9e4de, #efbf6a);
 
   background: var(--gradient);
   color: #fdfcfd;
@@ -12,6 +16,11 @@
   display: grid;
   place-items: center;
   padding: 2rem 0;
+  transition: background 0.3s ease;
+}
+
+.wrapper:hover {
+  background: linear-gradient(45deg, #e9e4de, #efbf6a);
 }
 
 .card {
@@ -55,24 +64,21 @@
   font-weight: 400;
   margin-top: 0;
   margin-bottom: 10px;
+  color: white;
 }
 
 .card h3 {
   font-size: 14px;
   font-weight: 400;
   margin: 0;
-  opacity: 0.75;
+  padding-bottom: 10px;
+  color:azure;
 }
 
 .card p {
   font-size: 13px;
   font-weight: 400;
-  margin-bottom: 30px;
-  opacity: 0.5;
-}
-
-.cardContent {
-  flex: 1;
+  color: gainsboro;
 }
 
 .buttonContainer {
@@ -84,7 +90,7 @@
   align-items: center;
   gap: 0.5rem;
   padding: 12px 24px;
-  background: var(--gradient);
+  background: var(--button-hover);
   color: var(--card);
   text-decoration: none;
   border-radius: 50px;
@@ -98,7 +104,12 @@
 .knowMoreBtn:hover {
   background: var(--button-hover);
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(255, 124, 125, 0.4);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.knowMoreBtn:focus {
+  outline: 2px solid #efbf6a;
+  outline-offset: 4px;
 }
 
 .arrow {
@@ -216,7 +227,7 @@
   border: none;
   border-radius: 50px;
   background: var(--card);
-  color: #fdfcfd;
+  color: var(--button-hover);
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
   cursor: pointer;
@@ -230,7 +241,7 @@
 }
 
 .yearButton.active {
-  background: var(--gradient);
+  background: var(--button-hover);
   color: var(--card);
   font-weight: 600;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
@@ -262,14 +273,13 @@
 
 .sponsorsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: 1fr;
   gap: 2rem;
   padding: 0 2rem;
 }
 
 @media (width <= 600px) {
   .sponsorsGrid {
-    grid-template-columns: 1fr;
     padding: 0 1rem;
   }
 
@@ -295,7 +305,7 @@
   border: none;
   border-radius: 50%;
   background: var(--card);
-  color: #fdfcfd;
+  color: #e9e4de;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -374,6 +384,7 @@
 @media (width <= 440px) {
   .card {
     padding: 15px 10px;
+   margin-right: -52px;
   }
 
   .cardImage {
@@ -385,7 +396,10 @@
   .card h2 {
     font-size: 20px;
   }
-
+.card h3 {
+  font-size: 15px;
+  padding-bottom: 0.5rem;
+}
   .knowMoreBtn {
     padding: 10px 20px;
     font-size: 0.9rem;
@@ -552,4 +566,27 @@
   opacity: 0.9;
   margin: 1rem 0;
   max-width: 400px;
+}
+
+@media (max-width: 600px) {
+  .cardContainer {
+    padding: 0 1rem;
+    gap: 1.5rem;
+    transition: padding 0.3s ease, gap 0.3s ease;
+  }
+}
+
+@media (max-width: 440px) {
+  .card {
+    padding: 1rem 0.625rem;
+    margin-right: -3.25rem;
+    transition: padding 0.3s ease, margin-right 0.3s ease;
+  }
+
+  .cardImage {
+    width: 9.375rem;
+    height: 9.375rem;
+    margin: -2.5rem auto 0.9375rem;
+    transition: width 0.3s ease, height 0.3s ease, margin 0.3s ease;
+  }
 }
