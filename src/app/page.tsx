@@ -3,7 +3,6 @@ import HeroSection from "@/components/HeroSection";
 import Events from "@/components/Events";
 import About from "@/components/About";
 import FAQs from "@/components/FAQs";
-import Footer from "@/components/Footer";
 import Gallery from "@/components/Gallery";
 import { useEffect, useState } from "react";
 
@@ -25,7 +24,6 @@ export default function Home() {
       <Events />
       <Gallery />
       <FAQs />
-      <Footer />
     </div>
   );
 }

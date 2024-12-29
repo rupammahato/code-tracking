@@ -57,3 +57,52 @@
     --ring: 142.4 71.8% 29.2%;
   }
 }
+
+
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 18, 18, 18;
+  --background-end-rgb: 30, 30, 30;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+    to bottom right,
+    rgb(var(--background-start-rgb)),
+    rgb(var(--background-end-rgb))
+  );
+}
+
+.glow-blue {
+  box-shadow: 0 0 10px #4FC3F7, 0 0 20px #4FC3F7, 0 0 30px #4FC3F7;
+}
+
+.glow-pink {
+  box-shadow: 0 0 10px #FF80AB, 0 0 20px #FF80AB, 0 0 30px #FF80AB;
+}
+
+.glow-green {
+  box-shadow: 0 0 10px #4CAF50, 0 0 20px #4CAF50, 0 0 30px #4CAF50;
+}
+
+.glow-red {
+  box-shadow: 0 0 10px #FF5252, 0 0 20px #FF5252, 0 0 30px #FF5252;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
