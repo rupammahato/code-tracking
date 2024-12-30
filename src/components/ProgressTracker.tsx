@@ -21,11 +21,11 @@ export default function ProgressTracker() {
         {steps.map((step, index) => (
           <div key={step.name} className="flex-1">
             <div className={`h-2 ${
-              step.completed ? 'bg-blue-500' : 'bg-gray-600'
+              step.completed ? 'bg-green-700' : 'bg-gray-600'
             } rounded-full`}>
               {step.completed && (
                 <motion.div
-                  className="h-full bg-blue-300 rounded-full"
+                  className="h-full bg-green-500 rounded-full"
                   initial={{ width: 0 }}
                   animate={{ width: '100%' }}
                   transition={{ duration: 0.5, delay: index * 0.2 }}

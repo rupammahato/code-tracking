@@ -40,6 +40,7 @@ export default function NavbarSection() {
 
   return (
     <Navbar
+      className="bg-[#cdc98a] text-[#460b09] "
       onMenuOpenChange={setIsMenuOpen}
       isBordered
       shouldHideOnScroll
@@ -74,18 +75,18 @@ export default function NavbarSection() {
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem isActive={pathname === "/"}>
           <Link
-            color={pathname === "/" ? undefined : "foreground"}
-            className={pathname === "/" ? "text-red-700" : ""}
+            color={pathname === "/" ? undefined : "secondary"}
+            className={pathname === "/" ? "text-red-700" : "text-[#460b09] font-semibold"}
             aria-current={pathname === "/" ? "page" : undefined}
             href="/"
           >
             Home
           </Link>
         </NavbarItem>
-        <NavbarItem isActive={pathname === "/event_workshop"}>
+        <NavbarItem className="text-[#460b09]" isActive={pathname === "/event_workshop"}>
           <Link
-            color={pathname === "/event_workshop" ? undefined : "foreground"}
-            className={pathname === "/event_workshop" ? "text-red-700" : ""}
+            color={undefined}
+            className={pathname === "/event_workshop" ? "text-red-700" : "text-[#460b09] font-semibold"}
             aria-current={pathname === "/event_workshop" ? "page" : undefined}
             href="/event_workshop"
           >
@@ -95,7 +96,7 @@ export default function NavbarSection() {
         <NavbarItem isActive={pathname === "/sponsors"}>
           <Link
             color={pathname === "/sponsors" ? undefined : "foreground"}
-            className={pathname === "/sponsors" ? "text-red-700" : ""}
+            className={pathname === "/sponsors" ? "text-red-700" : "text-[#460b09] font-semibold"}
             aria-current={pathname === "/sponsors" ? "page" : undefined}
             href="/sponsors"
           >
@@ -105,7 +106,7 @@ export default function NavbarSection() {
         <NavbarItem isActive={pathname === "/ourteam"}>
           <Link
             color={pathname === "/ourteam" ? undefined : "foreground"}
-            className={pathname === "/ourteam" ? "text-red-700" : ""}
+            className={pathname === "/ourteam" ? "text-red-700" : "text-[#460b09] font-semibold"}
             aria-current={pathname === "/ourteam" ? "page" : undefined}
             href="/ourteam"
           >
@@ -113,22 +114,22 @@ export default function NavbarSection() {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="https://www.mip.megalith.co.in/">
+          <Link color="foreground" className="text-[#460b09] font-semibold" href="https://www.mip.megalith.co.in/">
             MIP
           </Link>
         </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
-          <Link href="/login" className="text-[#e9e4de] hover:text-gray-200" >Login</Link>
+          <Link href="/login" className="text-[#460b09] hover:text-gray-900" >Login</Link>
         </NavbarItem>
         <NavbarItem>
-          <Button as={Link} className=" bg-[#e9e4de] text-[#091f46] font-semibold " color="primary" href="/registration" variant="flat">
+          <Button as={Link} className=" bg-[#460b09] text-[#cdc98a] font-semibold " color="primary" href="/registration" variant="flat">
             Register
           </Button>
         </NavbarItem>
       </NavbarContent>
-      <NavbarMenu>
+      <NavbarMenu className="z-50" >
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
