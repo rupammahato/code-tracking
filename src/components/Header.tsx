@@ -2,8 +2,9 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, ChevronDown, LogOut, User, Settings } from 'lucide-react';
+import { Search, ChevronDown, LogOut, User, HomeIcon } from 'lucide-react';
 import Image from 'next/image';
+import type { User as UserType } from '@/types/user';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import {
@@ -14,6 +15,10 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { useToast } from "@/components/ui/use-toast"
+import { useRouter } from 'next/navigation'
+import Female from "./assets/female.png"
+import male from "./assets/male.png"
 
 const sections = [
   { id: 'user-profile', name: 'User Profile' },
@@ -22,7 +27,16 @@ const sections = [
   { id: 'payment-history', name: 'Payment History' },
 ];
 
-export default function Header() {
+interface HeaderProps {
+  user: UserType;
+}
+
+// Add this helper function before the Header component
+const getFirstName = (fullName: string): string => {
+  return fullName?.split(' ')[0] || 'User';
+};
+
+export default function Header({ user }: HeaderProps) {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const searchInputRef = useRef<HTMLInputElement>(null);
@@ -32,8 +46,6 @@ export default function Header() {
       searchInputRef.current.focus();
     }
   }, [isSearchOpen]);
-
-  
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -53,7 +65,7 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-gradient-to-r from-gray-900 to-gray-800 shadow-lg py-4 px-6 max-sm:px-2 sticky top-0 z-10 border border-transparent border-b-green-500">
+    <header className="bg-gradient-to-r from-gray-900 to-gray-800 shadow-lg py-4 px-6 max-sm:px-2 sticky top-0 z-10 border border-transparent border-b-blue-500">
       <div className="container mx-auto">
         <div className="flex flex-wrap justify-between items-center space-y-2 sm:space-y-0">
           <motion.div
@@ -74,7 +86,7 @@ export default function Header() {
               handleSearch={handleSearch}
               searchInputRef={searchInputRef}
             />
-            <UserProfile />
+            <UserProfile user={user} />
           </div>
         </div>
       </div>
@@ -131,7 +143,53 @@ function SearchBar({ isSearchOpen, setIsSearchOpen, searchQuery, setSearchQuery,
   );
 }
 
-function UserProfile() {
+interface UserProfileProps {
+  user: UserType;
+}
+
+function UserProfile({ user }: UserProfileProps) {
+  if (!user) {
+    return null; // Or return a loading/fallback UI
+  }
+
+  const avatarUrl = "https://img.icons8.com/office/40/circled-user-male-skin-type-1-2.png";
+  const userName = user?.name || 'User';
+  const firstName = getFirstName(user?.name || 'User');
+  const userEmail = user?.email || '';
+  const gender = user?.gender || 'male';
+
+  const { toast } = useToast()
+  const router = useRouter()
+
+  const handleLogout = async () => {
+    try {
+      const response = await fetch('/api/users/logout', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Logged Out",
+          description: "You have been successfully logged out.",
+          duration: 5000,
+        });
+        router.push('/login');
+      } else {
+        throw new Error('Logout failed');
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to logout. Please try again.",
+        variant: "destructive",
+        duration: 5000,
+      });
+    }
+  }
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -140,34 +198,43 @@ function UserProfile() {
           className="flex items-center space-x-2 text-gray-300 hover:text-white hover:bg-gray-700 rounded-full"
         >
           <Image
-            src="/placeholder.svg?height=32&width=32"
-            alt="User Avatar"
+            src={gender === "female" ? Female : male}
+            alt={`${userName}'s Avatar`}
             width={32}
             height={32}
             className="rounded-full border-2 border-blue-500"
           />
-          <span className="font-medium hidden sm:inline">John Doe</span>
+          <span className="font-medium hidden capitalize sm:inline">{firstName}</span>
           <ChevronDown className="h-4 w-4 opacity-50" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-56 bg-gray-800 text-gray-100 border-gray-700 rounded-lg shadow-lg">
         <DropdownMenuLabel className="font-normal">
           <div className="flex flex-col space-y-1">
-            <p className="text-sm font-medium leading-none">John Doe</p>
-            <p className="text-xs leading-none text-gray-400">john.doe@example.com</p>
+            <p className="text-sm font-medium capitalize leading-none">{userName}</p>
+            <p className="text-xs leading-none text-gray-400">{userEmail}</p>
           </div>
         </DropdownMenuLabel>
         <DropdownMenuSeparator className="bg-gray-700" />
-        <DropdownMenuItem className="hover:bg-gray-700 focus:bg-gray-700 rounded transition-colors duration-200">
+        <DropdownMenuItem 
+          onClick={() => router.push('/')}
+          className="hover:bg-gray-700 focus:bg-gray-700 rounded transition-colors duration-200"
+        >
+          <HomeIcon className="mr-2 h-4 w-4" />
+          <span>Home</span>
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          className="hover:bg-gray-700 focus:bg-gray-700 rounded transition-colors duration-200"
+          onClick={() => router.push('/dashboard')}
+          >
           <User className="mr-2 h-4 w-4" />
           <span>Profile</span>
         </DropdownMenuItem>
-        <DropdownMenuItem className="hover:bg-gray-700 focus:bg-gray-700 rounded transition-colors duration-200">
-          <Settings className="mr-2 h-4 w-4" />
-          <span>Settings</span>
-        </DropdownMenuItem>
         <DropdownMenuSeparator className="bg-gray-700" />
-        <DropdownMenuItem className="hover:bg-gray-700 focus:bg-gray-700 rounded transition-colors duration-200 text-red-400 focus:text-red-400">
+        <DropdownMenuItem 
+          className="hover:bg-gray-700 focus:bg-gray-700 rounded transition-colors duration-200 text-red-400 focus:text-red-400"
+          onClick={handleLogout}
+          >
           <LogOut className="mr-2 h-4 w-4" />
           <span>Log out</span>
         </DropdownMenuItem>

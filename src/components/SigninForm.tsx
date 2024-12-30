@@ -16,91 +16,150 @@ type SignInFormData = {
 
 export function SignInForm() {
   const [isLoading, setIsLoading] = useState(false);
-  const [message, setMessage] = useState('');
+  const [error, setError] = useState('');
   const router = useRouter();
   const { register, handleSubmit, formState: { errors } } = useForm<SignInFormData>();
 
   const onSubmit = async (data: SignInFormData) => {
     setIsLoading(true);
-    setMessage('');
+    setError('');
+
     try {
-      const response = await axios.post('/api/users/login', data);
-      setMessage(response.data.message);
+      const response = await axios.post('/api/users/login', data, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        withCredentials: true // Important: ensures cookies are handled
+      });
+      
       if (response.data.success) {
-        router.push('/dashboard');
+        // Show success message
+        setError(''); // Clear any errors
+        // Small delay to show success message
+        setTimeout(() => {
+          router.push('/dashboard');
+          router.refresh();
+        }, 500);
+      } else {
+        setError(response.data.message || 'Login failed');
       }
     } catch (error) {
-      if (axios.isAxiosError(error) && error.response) {
-        console.error('Login error response:', error.response.data);
-        setMessage(error.response.data.message || 'An error occurred. Please try again.');
+      if (axios.isAxiosError(error)) {
+        setError(error.response?.data?.message || 'Login failed. Please try again.');
       } else {
-        console.error('Login error:', error);
-        setMessage('An error occurred. Please try again.');
+        setError('An unexpected error occurred');
       }
+      console.error('Login error:', error);
     } finally {
       setIsLoading(false);
     }
   };
 
   return (
-    <motion.form
+    <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.3 }}
-      onSubmit={handleSubmit(onSubmit)}
-      className="space-y-4 text-[#091f46]"
     >
-      <div className="space-y-2">
-        <Label htmlFor="email">Email:</Label>
-        <div className="relative">
-          <Input
-            id="email"
-            type="email"
-            placeholder="Enter your email"
-            {...register('email', { required: 'Email is required', pattern: { value: /^\S+@\S+$/i, message: 'Invalid email address' } })}
-            className="pl-10 shadow-md shadow-black"
-          />
-          <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-800 " size={18} />
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 text-[#091f46]">
+        {/* Email field */}
+        <div className="space-y-2">
+          <Label htmlFor="email">Email</Label>
+          <div className="relative">
+            <Input
+              id="email"
+              type="email"
+              placeholder="Enter your email"
+              {...register('email', {
+                required: 'Email is required',
+                pattern: {
+                  value: /^\S+@\S+$/i,
+                  message: 'Invalid email address'
+                }
+              })}
+              className="pl-10"
+              disabled={isLoading}
+            />
+            <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" size={18} />
+          </div>
+          {errors.email && (
+            <p className="text-red-500 text-sm">{errors.email.message}</p>
+          )}
         </div>
-        {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
-      </div>
-      <div className="space-y-2">
-        <Label htmlFor="password">Password:</Label>
-        <div className="relative">
-          <Input
-            id="password"
-            type="password"
-            placeholder="Enter your password"
-            {...register('password', { required: 'Password is required', minLength: { value: 6, message: 'Password must be at least 6 characters' } })}
-            className="pl-10 shadow-md shadow-black"
-          />
-          <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-800" size={18} />
+
+        {/* Password field */}
+        <div className="space-y-2">
+          <Label htmlFor="password">Password</Label>
+          <div className="relative">
+            <Input
+              id="password"
+              type="password"
+              placeholder="Enter your password"
+              {...register('password', {
+                required: 'Password is required',
+                minLength: {
+                  value: 6,
+                  message: 'Password must be at least 6 characters'
+                }
+              })}
+              className="pl-10"
+              disabled={isLoading}
+            />
+            <Lock className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" size={18} />
+          </div>
+          {errors.password && (
+            <p className="text-red-500 text-sm">{errors.password.message}</p>
+          )}
         </div>
-        {errors.password && <p className="text-red-500 text-sm">{errors.password.message}</p>}
-      </div>
-      <div className="text-right mt-0">
+
+        {/* Forgot Password Link */}
+        <div className="text-right">
+          <Button
+            type="button"
+            variant="link"
+            onClick={() => router.push('/forgotpassword')}
+            className="text-sm text-red-500 hover:text-red-700"
+            disabled={isLoading}
+          >
+            Forgot Password?
+          </Button>
+        </div>
+
+        {/* Submit Button */}
         <Button
-          variant="link"
-          onClick={() => router.push('/forgotpassword')}
-          className="text-sm text-red-500 hover:text-red-800"
+          type="submit"
+          className="w-full bg-[#091f46] hover:bg-gray-900"
+          disabled={isLoading}
         >
-          Forgot Password?
+          {isLoading ? (
+            <>
+              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              Signing in...
+            </>
+          ) : (
+            'Sign In'
+          )}
         </Button>
-      </div>
-      <Button type="submit" disabled={isLoading} className={`w-full bg-[#091f46] ${isLoading ? 'bg-[#091f46]' : 'hover:bg-gray-900'}`}>
-        {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : 'Sign In'}
-      </Button>
-      {message && <p className="text-center text-sm font-medium text-red-600">{message}</p>}
-      <div className="text-center">
-        <Button
-          variant="link"
-          onClick={() => router.push('/registration')}
-          className="text-sm text-gray-900 hover:text-[#091f46]"
-        >
-          Don't have an account? Sign Up
-        </Button>
-      </div>
-    </motion.form>
+
+        {/* Error Message */}
+        {error && (
+          <p className="text-red-500 text-sm text-center">{error}</p>
+        )}
+
+        {/* Sign Up Link */}
+        <div className="text-center">
+          <Button
+            type="button"
+            variant="link"
+            onClick={() => router.push('/registration')}
+            className="text-sm text-gray-700 hover:text-[#091f46]"
+            disabled={isLoading}
+          >
+            Don&apos;t have an account? Sign Up
+          </Button>
+        </div>
+      </form>
+    </motion.div>
   );
 }

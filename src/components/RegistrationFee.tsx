@@ -37,7 +37,7 @@ export default function RegistrationFee() {
 
   return (
     <motion.div
-      className="bg-gray-800 rounded-lg shadow-lg p-6 border border-red-500 "
+      className="bg-gray-800 rounded-lg shadow-lg p-6 border border-green-500 "
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.4 }}
