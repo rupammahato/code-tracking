@@ -5,8 +5,8 @@ import { motion } from 'framer-motion'
 export default function ProgressTracker() {
   const steps = [
     { name: 'Profile Completion', completed: true },
-    { name: 'Payment Status', completed: true },
-    { name: 'Registration Confirmation', completed: false },
+    { name: 'Payment Status', completed: false },
+    { name: 'Confirmation', completed: false },
   ]
 
   return (

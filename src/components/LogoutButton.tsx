@@ -2,17 +2,39 @@
 
 import { motion } from 'framer-motion'
 import { useToast } from "@/components/ui/use-toast"
+import { useRouter } from 'next/navigation'
 
 export default function LogoutButton() {
   const { toast } = useToast()
+  const router = useRouter()
 
-  const handleLogout = () => {
-    // Implement logout logic here
-    toast({
-      title: "Logged Out",
-      description: "You have been successfully logged out.",
-      duration: 5000,
-    })
+  const handleLogout = async () => {
+    try {
+      const response = await fetch('/api/users/logout', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Logged Out",
+          description: "You have been successfully logged out.",
+          duration: 5000,
+        });
+        router.push('/login');
+      } else {
+        throw new Error('Logout failed');
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to logout. Please try again.",
+        variant: "destructive",
+        duration: 5000,
+      });
+    }
   }
 
   return (

@@ -51,6 +51,14 @@ const userSchema = new mongoose.Schema({
         type: Boolean,
         default: false,
     },
+    isPaymentDone: {
+        type: Boolean,
+        default: false,
+    },
+    registrationType: {
+        type: String,
+        enum: ['Events', 'Workshops', 'Both'],
+    },
     resetPasswordToken: String,
     resetPasswordExpiresAt: Date,
     verificationToken: String,

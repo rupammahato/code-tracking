@@ -17,7 +17,7 @@ export default function SignUpPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-950 to-gray-950 flex items-center justify-center p-4">
-      <div className="bg-gray-100 rounded-lg shadow-xl overflow-hidden w-full max-w-md p-8">
+      <div className="bg-gray-100 py-10 rounded-lg shadow-xl overflow-hidden w-full max-w-md p-8">
         <motion.div
           initial={{ x: -10, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
