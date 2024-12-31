@@ -15,7 +15,7 @@ export default function HeroSection() {
           fill="#460b09"
         />
           <div className="flex items-center flex-col gap-0 justify-center px-2 md:px-10 py-0 w-full h-full min-h-screen">
-            <Image src={HeroLogo} alt="" className=" w-[38rem] mt-[6.5rem] max-md:mt-[11rem] " />
+            <Image src={HeroLogo} alt="" className=" w-[38rem] mt-[7.5rem] max-md:mt-[11rem] " />
             {/* <h2 className="text-gray-400 text-[4rem] sm:text-[4rem] md:text-[7rem] font-canilari font-bold text-center">
               <span className="text-red-600 m-0">MEGA</span>LITH{" "}
             <span className="m-0 text-[5rem] sm:text-[4rem] md:text-[8.5rem] text-gray-100">
