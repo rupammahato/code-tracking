@@ -36,11 +36,9 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
 
         // Generate token and get response with cookie
         const tokenResponse = await generateTokenAndSetCookies(user._id.toString());
-
-        // Get the cookies from tokenResponse
         const cookies = tokenResponse.cookies;
 
-        // Create final response
+        // Create final response with redirect based on user role
         const response = NextResponse.json({
             success: true,
             message: "Login successful",
@@ -51,14 +49,14 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
                 isAdmin: user.isAdmin,
                 isVerified: user.isVerified,
             },
-            redirectUrl: '/dashboard'
+            redirectUrl: user.isAdmin ? '/admin-dashboard' : '/dashboard'
         }, { status: 200 });
 
         // Copy cookies from tokenResponse to final response
         cookies.getAll().forEach(cookie => {
             response.cookies.set({
                 ...cookie,
-                sameSite: 'lax', // Changed from 'strict' to 'lax'
+                sameSite: 'lax',
             });
         });
 

@@ -3,10 +3,33 @@ import type { NextRequest } from 'next/server'
 import { verifyJWT } from '@/utils/verifyJWT'
 
 // Add paths that should be protected
-const protectedPaths = ['/dashboard', '/profile'];
+const protectedPaths = ['/dashboard', '/profile', '/admin-dashboard'];
+
+// Add paths that authenticated users shouldn't access
+const authPaths = ['/login', '/registration', '/forgot-password', '/reset-password'];
 
 export async function middleware(request: NextRequest) {
     const path = request.nextUrl.pathname;
+
+    // Get token from cookies
+    const token = request.cookies.get('token')?.value;
+
+    // Check if the path is an auth path (login, register, etc.)
+    const isAuthPath = authPaths.some(authPath => 
+        path.startsWith(authPath)
+    );
+
+    if (isAuthPath && token) {
+        try {
+            // Verify the token
+            await verifyJWT(token);
+            // If token is valid, redirect to home page
+            return NextResponse.redirect(new URL('/', request.url));
+        } catch (error) {
+            // If token is invalid, allow access to auth pages
+            return NextResponse.next();
+        }
+    }
 
     // Check if the path should be protected
     const isProtectedPath = protectedPaths.some(protectedPath => 
@@ -14,8 +37,6 @@ export async function middleware(request: NextRequest) {
     );
 
     if (isProtectedPath) {
-        const token = request.cookies.get('token')?.value;
-
         if (!token) {
             // Redirect to login if no token exists
             return NextResponse.redirect(new URL('/login', request.url));
@@ -50,6 +71,10 @@ export const config = {
     matcher: [
         '/dashboard/:path*',
         '/profile/:path*',
-        // Add other protected routes here
+        '/admin-dashboard/:path*',
+        '/login',
+        '/registration',
+        '/forgot-password',
+        '/reset-password/:path*'
     ]
 }
