@@ -37,7 +37,7 @@ export function SignInForm() {
         setError(''); // Clear any errors
         // Small delay to show success message
         setTimeout(() => {
-          router.push('/dashboard');
+          router.push(response.data.redirectUrl);
           router.refresh();
         }, 500);
       } else {
