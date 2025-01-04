@@ -4,9 +4,23 @@ import { Spotlight } from "./ui/Spotlight";
 import ClientOnly from './ClientOnly';
 import './HeroSection.css'; // Import the CSS file
 import Image from "next/image";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import HeroLogo from "./assets/HeroLogo.png"
 import { Button } from "@nextui-org/react";
 import { Link } from "@nextui-org/react";
+
+const handleScheduleClick = () => {
+  toast.info('Coming Soon!',{
+    autoClose: 3000,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    className: 'bg-[#cdc98a] text-[#460b09] rounded-md'
+  });
+};
+
 export default function HeroSection() {
   return (
     <div className="w-full hero-background mx-auto rounded-md h-screen flex flex-col items-center justify-center overflow-hidden">
@@ -30,7 +44,7 @@ export default function HeroSection() {
             </div> */}
             <div className="flex w-3/5 pl-[1.55rem] max-sm:pl-[2.3rem] flex-col pt-14 items-center pointer-events-auto justify-center gap-6">
             
-              <Button className="text-[#460b09] cursor-pointer max-sm:text-base z-10 w-[10.3rem] text-xl bg-[#cdc98a] rounded-full px-8 py-[0px] m-0 border-5 font-semibold border-[#460b09]" >
+              <Button className="text-[#460b09] cursor-pointer max-sm:text-base z-10 w-[10.3rem] text-xl bg-[#cdc98a] rounded-full px-8 py-[0px] m-0 border-5 font-semibold border-[#460b09]" onClick={handleScheduleClick}>
                   Schedule
               </Button>
 
@@ -56,6 +70,7 @@ export default function HeroSection() {
               </HoverBorderGradient> */}
             </div>
           </div>
+          <ToastContainer />
           <ClientOnly>
             <MemoizedStars />
           </ClientOnly>

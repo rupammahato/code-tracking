@@ -134,7 +134,7 @@ export default function Carousel() {
             {/* Arrows */}
 
             {!isMobile && (
-                <div className="absolute bottom-4 right-4 flex gap-4">
+                <div className="absolute bottom-16 right-4 flex gap-4">
                     <button
                         onClick={prevSlide}
                         aria-label="Previous slide"
@@ -189,20 +189,23 @@ export default function Carousel() {
                 style={{ scrollbarWidth: "none" }}
             >
                 {items.map((item, index) => (
-                    <Image
+                    <div
                         key={item.id}
-                        src={item.img}
-                        width={isMobile ? 100 : 80}
-                        height={isMobile ? 120 : 100}
-                        alt={`Thumbnail for ${item.title}`}
-                        className={`object-cover rounded-lg cursor-pointer ${index === currentIndex ? "border-2 border-[#091f46]" : "border-2 border-transparent"
+                        className={`relative ${isMobile ? "w-24 h-24" : "w-12 h-12"} cursor-pointer ${index === currentIndex ? "border-2 border-[#091f46] rounded-lg " : "border-2 border-transparent"
                             } hover:opacity-80`}
                         onClick={() => setCurrentIndex(index)}
-                    />
+                    >
+                        <Image
+                            src={item.img}
+                            layout="fill"
+                            objectFit="cover"
+                            alt={`Thumbnail for ${item.title}`}
+                            className="rounded-lg"
+                        />
+                    </div>
                 ))}
             </div>
         </div>
     );
-
-
+}
 

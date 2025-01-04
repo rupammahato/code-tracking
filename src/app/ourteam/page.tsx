@@ -119,7 +119,7 @@ const coordinators = [
 
 export default function ProfilePage() {
   return (
-    <div className="min-h-screen bg-[#091F46] py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#460b09] py-12 px-4 sm:px-6 lg:px-8">
 
       {/* Team Navigation */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-[-15] sm:mt-[-10] mb-[15] sm:mb-[10]">
@@ -127,42 +127,42 @@ export default function ProfilePage() {
           <Link
             href="/ourteam/design"
             className="px-5 py-2 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 group 
-             hover:bg-[#091F46]  hover:-translate-y-0.5"
+             hover:bg-[#cdc98a]  hover:-translate-y-0.5"
           > 
-            <span className="text-gray-800 font-medium group-hover:text-[#E9E4DE]">
+            <span className="text-gray-800 font-medium group-hover:text-[#460b09]">
               Design Team
             </span>
-            <div className="h-0.5 w-0 group-hover:w-full bg-white transition-all duration-300"></div>
+            <div className="h-0.5 w-0 group-hover:w-full bg-[#460b09] transition-all duration-300"></div>
           </Link>
 
           <Link
             href="/ourteam/web"
             className="px-5 py-2 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 group
-            hover:bg-[#091F46]   hover:-translate-y-0.5"
+            hover:bg-[#cdc98a]   hover:-translate-y-0.5"
           >
-            <span className="text-gray-800 font-medium group-hover:text-[#E9E4DE]">
+            <span className="text-gray-800 font-medium group-hover:text-[#460b09]">
               Web Team
             </span>
-            <div className="h-0.5 w-0 group-hover:w-full bg-white transition-all duration-300"></div>
+            <div className="h-0.5 w-0 group-hover:w-full bg-[#460b09] transition-all duration-300"></div>
           </Link>
 
           <Link
             href="/ourteam/core"
             className="px-5 py-2 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 group
-            hover:bg-[#091F46]   hover:-translate-y-0.5"
+            hover:bg-[#cdc98a]   hover:-translate-y-0.5"
           >
-            <span className="text-gray-800 font-medium group-hover:text-[#E9E4DE]">
+            <span className="text-gray-800 font-medium group-hover:text-[#460b09]">
               Core Team
             </span>
-            <div className="h-0.5 w-0 group-hover:w-full bg-white transition-all duration-300"></div>
+            <div className="h-0.5 w-0 group-hover:w-full bg-[#460b09] transition-all duration-300"></div>
           </Link>
         </div>
       </div>
 
 
       {/* Head of Department Section */}
-      <div className="max-w-7xl px-6 py-12 bg-gradient-to-r from-blue-100 via-white to-blue-100 shadow-lg">
-        <h2 className="text-3xl font-serif font-bold text-center text-blue-900 mb-6">
+      <div className="max-w-7xl px-6 py-12 bg-[#cdc98a] shadow-lg">
+        <h2 className="text-3xl font-serif font-bold text-center text-[#460b09] mb-6">
           Head of Department
         </h2>
         <div className="flex flex-col items-center space-y-4">
@@ -191,8 +191,8 @@ export default function ProfilePage() {
       </div>
 
       {/* Chairpersons Section */}
-      <div className="max-w-7xl mx-auto px-6 py-12 bg-gradient-to-r from-blue-100 via-white to-blue-100 shadow-lg">
-        <h2 className="text-3xl font-serif font-bold text-center text-blue-900 mb-6">
+      <div className="max-w-7xl mx-auto px-6 py-12 bg-[#cdc98a] shadow-lg">
+        <h2 className="text-3xl font-serif font-bold text-center text-[#460b09] mb-6">
           Chairpersons
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 max-w-xl mx-auto">
@@ -235,8 +235,8 @@ export default function ProfilePage() {
       </div>
 
       {/* Executive Body Section */}
-      <div className="max-w-7xl px-6 py-12 bg-gradient-to-r from-blue-100 via-white to-blue-100 shadow-lg">
-        <h2 className="text-3xl font-serif font-bold text-center text-blue-900 mb-6">
+      <div className="max-w-7xl px-6 py-12 bg-[#cdc98a] shadow-lg">
+        <h2 className="text-3xl font-serif font-bold text-center text-[#460b09] mb-6">
           Executive Body
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
@@ -291,8 +291,8 @@ export default function ProfilePage() {
 
       {/* Coordinators Section */}
 
-      <div className="max-w-7xl px-6 py-12 bg-gradient-to-r from-blue-100 via-white to-blue-100 shadow-lg">
-        <h2 className="text-3xl font-serif font-bold text-center text-blue-900 mb-6">
+      <div className="max-w-7xl px-6 py-12 bg-[#cdc98a] shadow-lg">
+        <h2 className="text-3xl font-serif font-bold text-center text-[#460b09] mb-6">
           Coordinators
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">

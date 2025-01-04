@@ -1,5 +1,6 @@
 "use client"
 import Image from "next/image";
+import Link from 'next/link';
 import React from "react";
 import { Timeline } from "@/components/ui/timeline";
 import green2 from "./assets/green2.png";
@@ -28,13 +29,15 @@ export default function Events() {
               up with innovative and creative ways to mitigate effects of
               pollution and restore greenery
             </p>
+            <Link href="/events">
             <HoverBorderGradient
               containerClassName="rounded-full"
               as="button"
-              className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
+              className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2 transition duration-300 ease-in-out transform hover:bg-gray-200 dark:hover:bg-gray-800 hover:scale-105 active:scale-100"
             >
               <span>More Details</span>
             </HoverBorderGradient>
+            </Link>
           </div>
         </div>
       ),
@@ -58,13 +61,15 @@ export default function Events() {
             bring their creative ideas to life by crafting small-scale models
             that represent the real-world projects
           </p>
+          <Link href="/events">
             <HoverBorderGradient
               containerClassName="rounded-full"
               as="button"
-              className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
+              className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2 transition duration-300 ease-in-out transform hover:bg-gray-200 dark:hover:bg-gray-800 hover:scale-105 active:scale-100"
             >
               <span>More Details</span>
             </HoverBorderGradient>
+            </Link>
           </div>
         </div>
       ),
@@ -88,13 +93,15 @@ export default function Events() {
             photographic skills that help them capture cherishable moments and
             to uplift their creative and imaginative skills
           </p>
+          <Link href="/events">
             <HoverBorderGradient
               containerClassName="rounded-full"
               as="button"
-              className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
+              className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2 transition duration-300 ease-in-out transform hover:bg-gray-200 dark:hover:bg-gray-800 hover:scale-105 active:scale-100"
             >
               <span>More Details</span>
             </HoverBorderGradient>
+            </Link>
           </div>
         </div>       
       ),
@@ -108,13 +115,15 @@ export default function Events() {
         </h2>
       </div>
       <Timeline data={data} />
+      <Link href="/events">
       <HoverBorderGradient
         containerClassName="rounded-full"
         as="button"
-        className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
+        className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2 transition duration-300 ease-in-out transform hover:bg-gray-200 dark:hover:bg-gray-800 hover:scale-105 active:scale-100"
       >
         <span>Other Events</span>
       </HoverBorderGradient>
+      </Link>
     </div>
   );
 }
