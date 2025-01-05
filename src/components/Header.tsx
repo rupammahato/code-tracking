@@ -148,18 +148,19 @@ interface UserProfileProps {
 }
 
 function UserProfile({ user }: UserProfileProps) {
+  const { toast } = useToast()
+  const router = useRouter()
+
   if (!user) {
     return null; // Or return a loading/fallback UI
   }
 
-  const avatarUrl = "https://img.icons8.com/office/40/circled-user-male-skin-type-1-2.png";
   const userName = user?.name || 'User';
   const firstName = getFirstName(user?.name || 'User');
   const userEmail = user?.email || '';
   const gender = user?.gender || 'male';
 
-  const { toast } = useToast()
-  const router = useRouter()
+
 
   const handleLogout = async () => {
     try {
