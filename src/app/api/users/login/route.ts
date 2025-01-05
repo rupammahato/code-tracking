@@ -9,7 +9,6 @@ connect();
 export async function POST(req: NextRequest): Promise<NextResponse> {
     try {
         const { email, password } = await req.json();
-        console.log("Login attempt for email:", email);
 
         const user = await User.findOne({ email });
         if (!user) {
