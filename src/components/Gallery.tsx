@@ -9,7 +9,7 @@ export default function Gallery() {
             Gallery
           </h2>
       </div>
-      <ParallaxScroll images={images} />
+      <ParallaxScroll className="max-sm:flex-row " images={images} />
     </div>
   )
 }

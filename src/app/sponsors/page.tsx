@@ -3,6 +3,7 @@ import { useState, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
+import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 
 interface Sponsor {
   sponsorName: string;
@@ -446,13 +447,13 @@ export default function Sponsors() {
                     <h2>{sponsor.sponsorName}</h2>
                     <h3>{sponsor.subTitle}</h3>
                     <p className="max-sm:line-clamp-1" >{sponsor.description}</p>
-                    <button className={styles.buttonContainer}>
-                      <Link href={sponsor.sponsorDetails} legacyBehavior>
-                        <a className={styles.knowMoreBtn}>
-                          Know More <span className={styles.arrow}>→</span>
-                        </a>
+                    <div className="w-full flex justify-center items-center pt-6 max-sm:pt-3" >
+                      <Link href={sponsor.sponsorDetails} className="w-full flex justify-center items-center text-center " legacyBehavior>
+                          <HoverBorderGradient className="bg-gradient-to-r from-[#0f0c29] to-[#2e295f]" >
+                              Know More <span className={styles.arrow}>→</span>
+                          </HoverBorderGradient>
                       </Link>
-                    </button>
+                    </div>
                   </div>
                 </div>
               ))}

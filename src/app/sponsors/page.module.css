@@ -182,7 +182,10 @@ html {
 
 @media (width <= 440px) {
   .card {
-    padding: 20px 15px 30px;
+    padding: 15px 10px;
+    margin-right: 0;
+    width: 90%;
+    margin: 0 auto;
   }
 
   .cardImage {
@@ -301,6 +304,8 @@ html {
   align-items: center;
   justify-content: center;
   gap: 3rem;
+  padding: 0 1rem;
+  overflow: hidden;
 }
 
 .navButton {
@@ -381,15 +386,30 @@ html {
 
 @media (width <= 600px) {
   .cardContainer {
-    padding: 0 1rem;
-    gap: 1.5rem;
+    padding: 0;
+    gap: 1rem;
+  }
+
+  .card {
+    margin: 1rem;
+    padding: 30px 20px;
+    width: calc(100% - 2rem);
+    max-width: 100%;
+  }
+
+  .cardImage {
+    margin: -60px auto 20px;
+    width: 80%;
+    max-width: 280px;
+    height: auto;
   }
 }
 
 @media (width <= 440px) {
   .card {
+    margin: 1rem;
     padding: 15px 10px;
-   margin-right: -52px;
+    width: calc(100% - 2rem);
   }
 
   .cardImage {
@@ -526,7 +546,7 @@ html {
 
 @media (width <= 600px) {
   .cardContainer {
-    padding: 0 1rem;
+    padding: 0;
     gap: 1rem;
   }
 
