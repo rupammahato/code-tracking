@@ -5,7 +5,7 @@ import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
 
 export default function About() {
   return (
-    <div className="flex flex-col w-full justify-center items-center min-h-screen overflow-hidden dark:bg-black bg-white">
+    <div className="flex flex-col w-full justify-center items-center min-h-screen overflow-hidden dark:bg-gradient-to-b from-[#0f0c29] to-[#2e295f] bg-white">
         <div className="flex items-center justify-center pt-10">
           <h2 className="text-4xl sm:text-4xl font-bold md:text-6xl text-black dark:text-white text-center ">
             About Us

@@ -3,7 +3,7 @@ import { ParallaxScroll } from "./ui/parallax-scroll";
 
 export default function Gallery() {
   return(
-    <div className="w-full h-full bg-white dark:bg-black text-black dark:text-white flex flex-col items-center justify-center">
+    <div className="w-full h-full bg-white dark:bg-gradient-to-b from-[#0f0c29] to-[#2e295f] text-black dark:text-white flex flex-col items-center justify-center">
         <div className="flex items-center justify-center py-10">
           <h2 className="text-4xl sm:text-4xl mt-5 font-bold md:text-6xl text-black dark:text-white text-center ">
             Gallery

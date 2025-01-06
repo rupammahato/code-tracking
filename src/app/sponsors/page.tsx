@@ -278,9 +278,11 @@ export default function Sponsors() {
           2025
         </button>
       </div>
+      
       {sponsors.length > 0 ? (
         sponsors.map((category) => (
           <div key={category.category}>
+            <div className="flex w-full justify-center flex-col items-center">
             <h2 className={styles.categoryTitle}>{category.category}</h2>
             <div className={styles.sponsorsGrid}>
               {category.sponsors.map((sponsor) => (
@@ -295,17 +297,18 @@ export default function Sponsors() {
                   <div className={styles.cardContent}>
                     <h2>{sponsor.sponsorName}</h2>
                     <h3>{sponsor.subTitle}</h3>
-                    <p>{sponsor.description}</p>
-                    <div className={styles.buttonContainer}>
+                    <p className="max-sm:line-clamp-1" >{sponsor.description}</p>
+                    <button className={styles.buttonContainer}>
                       <Link href={sponsor.sponsorDetails} legacyBehavior>
                         <a className={styles.knowMoreBtn}>
                           Know More <span className={styles.arrow}>→</span>
                         </a>
                       </Link>
-                    </div>
+                    </button>
                   </div>
                 </div>
               ))}
+            </div>
             </div>
           </div>
         ))

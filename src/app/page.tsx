@@ -18,7 +18,7 @@ export default function Home() {
   }
 
   return (
-    <div className="bg-black flex flex-col items-center justify-center">
+    <div className="bg-gradient-to-r from-[#0f0c29] to-[#2e295f] flex flex-col items-center justify-center">
       <HeroSection />
       <About />
       <Events />

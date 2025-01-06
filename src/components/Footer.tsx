@@ -1,25 +1,26 @@
 'use client'
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 import { motion } from 'framer-motion'
-import { Facebook, Instagram, Youtube, Linkedin, Phone, Mail } from 'lucide-react'
+import { Facebook, Instagram, Youtube, Linkedin, Phone } from 'lucide-react'
 import Link from 'next/link'
 
 const socialLinks = [
-  { name: 'Facebook', icon: Facebook, href: 'https://facebook.com' },
-  { name: 'Instagram', icon: Instagram, href: 'https://instagram.com' },
-  { name: 'YouTube', icon: Youtube, href: 'https://youtube.com' },
-  { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com' },
+  { name: 'Facebook', icon: Facebook, href: 'https://www.facebook.com/megalithkgp/' },
+  { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/iitkgp.megalith/' },
+  { name: 'YouTube', icon: Youtube, href: 'https://www.youtube.com/@MegalithCoInIITKgp' },
+  { name: 'LinkedIn', icon: Linkedin, href: 'https://in.linkedin.com/company/megalith-iit-kharagpur' },
 ]
 
 const contactInfo = [
-  { icon: Phone, content: '+1 (555) 123-4567' },
-  { icon: Mail, content: 'contact@example.com' },
+  { icon: Phone, name:"Dheeraj", content: '8247669860' },
+  { icon: Phone, name:"Alok", content: '6299042184' },
+  { icon: Phone, name:"Ephraim", content: '9059488639'}
 ]
 
 export default function Footer() {
   return (
     <BackgroundBeamsWithCollision
-    className="w-full h-full md:h-auto bg-white text-black dark:text-white dark:bg-black "
+    className="w-full h-full md:h-auto bg-white text-black dark:text-white dark:bg-[#191b20] "
     >
       <footer className="bg-dark text-white w-full">
         <div className="w-full mx-auto px-4 sm:px-6 py-8 sm:py-12 lg:py-16">
@@ -29,7 +30,7 @@ export default function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="space-y-6 sm:border-r border-gray-800/50 max-sm:border-b pb-8"
+            className="space-y-6 sm:border-r border-[#cdcabb] max-sm:border-b pb-8"
           >
             <h2 className="text-xl sm:text-2xl font-bold flex items-center justify-center px-4">Follow us</h2>
             <div className="flex flex-wrap gap-4 justify-center">
@@ -72,8 +73,8 @@ export default function Footer() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: 0.4 + index * 0.1 }}
                     >
-                  <div className="p-2 rounded-full bg-gray-800/50 group-hover:bg-gray-700/50 transition-colors">
-                    <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-gray-900 dark:text-gray-400 dark:group-hover:text-white group-hover:text-gray-800 transition-colors" />
+                  <div className="flex flex-col gap-1 rounded-full">
+                    <h2 className=" text-gray-900 dark:text-gray-400 "> {item.name}-</h2>
                   </div>
                   <span className="text-sm sm:text-base text-gray-900 dark:text-gray-300 dark:group-hover:text-white group-hover:text-gray-800 transition-colors">
                       {item.content}

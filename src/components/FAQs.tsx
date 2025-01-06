@@ -9,7 +9,7 @@ import React from "react";
 
 export default function FAQs() {
   return (
-    <div className="w-full flex flex-col bg-white dark:bg-black text-black dark:text-white items-center justify-center py-5">
+    <div className="w-full flex flex-col bg-white dark:bg-gradient-to-t from-[#0f0c29] to-[#2e295f] text-black dark:text-white items-center justify-center py-5">
       <div className="flex items-center justify-center py-10">
           <h2 className="text-4xl sm:text-4xl font-bold md:text-6xl text-black dark:text-white text-center ">
             FAQs

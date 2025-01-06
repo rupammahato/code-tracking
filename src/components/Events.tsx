@@ -33,7 +33,7 @@ export default function Events() {
             <HoverBorderGradient
               containerClassName="rounded-full"
               as="button"
-              className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2 transition duration-300 ease-in-out transform hover:bg-gray-200 dark:hover:bg-gray-800 hover:scale-105 active:scale-100"
+              className="dark:bg-gradient-to-t from-[#0f0c29] to-[#2e295f] bg-white text-black dark:text-white flex items-center space-x-2 transition duration-300 ease-in-out transform hover:bg-gray-200 dark:hover:bg-gray-800 hover:scale-105 active:scale-100"
             >
               <span>More Details</span>
             </HoverBorderGradient>
@@ -65,7 +65,7 @@ export default function Events() {
             <HoverBorderGradient
               containerClassName="rounded-full"
               as="button"
-              className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2 transition duration-300 ease-in-out transform hover:bg-gray-200 dark:hover:bg-gray-800 hover:scale-105 active:scale-100"
+              className="dark:bg-gradient-to-t from-[#0f0c29] to-[#2e295f] bg-white text-black dark:text-white flex items-center space-x-2 transition duration-300 ease-in-out transform hover:bg-gray-200 dark:hover:bg-gray-800 hover:scale-105 active:scale-100"
             >
               <span>More Details</span>
             </HoverBorderGradient>
@@ -97,7 +97,7 @@ export default function Events() {
             <HoverBorderGradient
               containerClassName="rounded-full"
               as="button"
-              className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2 transition duration-300 ease-in-out transform hover:bg-gray-200 dark:hover:bg-gray-800 hover:scale-105 active:scale-100"
+              className="dark:bg-gradient-to-t from-[#0f0c29] to-[#2e295f] bg-white text-black dark:text-white flex items-center space-x-2 transition duration-300 ease-in-out transform hover:bg-gray-200 dark:hover:bg-gray-800 hover:scale-105 active:scale-100"
             >
               <span>More Details</span>
             </HoverBorderGradient>
@@ -108,18 +108,14 @@ export default function Events() {
     },
   ];
   return (
-    <div className="w-full flex flex-col items-center justify-center py-0 bg-white dark:bg-black dark:text-white">
-      <div className="max-w-7xl mx-auto bg-white dark:bg-black">
-        <h2 className="text-4xl sm:text-4xl font-bold md:text-7xl text-black dark:bg-black bg-white dark:text-white text-center max-w-4xl">
-          Events
-        </h2>
-      </div>
+    <div className="w-full flex flex-col items-center justify-center py-0 bg-white dark:bg-gradient-to-t from-[#0f0c29] to-[#2e295f] dark:text-white">
+      
       <Timeline data={data} />
       <Link href="/events">
       <HoverBorderGradient
         containerClassName="rounded-full"
         as="button"
-        className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2 transition duration-300 ease-in-out transform hover:bg-gray-200 dark:hover:bg-gray-800 hover:scale-105 active:scale-100"
+        className="dark:bg-gradient-to-t from-[#0f0c29] to-[#2e295f] bg-white text-black dark:text-white flex items-center space-x-2 transition duration-300 ease-in-out transform hover:bg-gray-200 dark:hover:bg-gray-800 hover:scale-105 active:scale-100"
       >
         <span>Other Events</span>
       </HoverBorderGradient>
