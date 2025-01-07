@@ -21,7 +21,7 @@ const carouselItems = {
     },
     {
       id: 2,
-      img: "/EventsImages/green_canvas.jpg",
+      img: "/EventsImages/greencanvas.png",
       title: "Green Canvas",
       topic:
         "The purpose of Green Canvas is to encourage participants to come up with innovative and creative ways to mitigate effects of pollution and restore greenery",
@@ -29,21 +29,21 @@ const carouselItems = {
     },
     {
       id: 3,
-      img: "/EventsImages/photography.jpg",
+      img: "/EventsImages/comingsoon.jpg",
       title: "COMING SOON",
       topic: "...",
       path: "/file3.pdf",
     },
     {
       id: 4,
-      img: "/EventsImages/rotol.jpg",
+      img: "/EventsImages/comingsoon.jpg",
       title: "COMING SOON",
       topic: "...",
       path: "/file4.pdf",
     },
     {
       id: 5,
-      img: "/EventsImages/img5.jpg",
+      img: "/EventsImages/comingsoon.jpg",
       title: "COMING SOON",
       topic: "...",
       path: "/file5.pdf",
@@ -74,14 +74,14 @@ const carouselItems = {
     },
     {
       id: 9,
-      img: "/EventsImages/instridge.jpg",
+      img: "/EventsImages/comingsoon.jpg",
       title: "COMING SOON",
       topic: "...",
       path: "/file9.pdf",
     },
     {
       id: 10,
-      img: "/EventsImages/debate.jpg",
+      img: "/EventsImages/comingsoon.jpg",
       title: "COMING SOON",
       topic: "...",
       path: "/file10.pdf",
@@ -97,26 +97,26 @@ const carouselItems = {
     },
     {
       id: 2,
-      img: "/EventsImages/green_canvas.jpg",
+      img: "/EventsImages/greencanvas.png",
       title: "Green Canvas",
       topic:
         "The purpose of Green Canvas is to encourage participants to come up with innovative and creative ways to mitigate effects of pollution and restore greenery",
     },
     {
       id: 3,
-      img: "/EventsImages/photography.jpg",
+      img: "/EventsImages/comingsoon.jpg",
       title: "COMING SOON",
       topic: "...",
     },
     {
       id: 4,
-      img: "/EventsImages/rotol.jpg",
+      img: "/EventsImages/comingsoon.jpg",
       title: "COMING SOON",
       topic: "...",
     },
     {
       id: 5,
-      img: "/EventsImages/img5.jpg",
+      img: "/EventsImages/comingsoon.jpg",
       title: "COMING SOON",
       topic: "...",
     },
@@ -143,13 +143,13 @@ const carouselItems = {
     },
     {
       id: 9,
-      img: "/EventsImages/instridge.jpg",
+      img: "/EventsImages/comingsoon.jpg",
       title: "COMING SOON",
       topic: "...",
     },
     {
       id: 10,
-      img: "/EventsImages/debate.jpg",
+      img: "/EventsImages/comingsoon.jpg",
       title: "COMING SOON",
       topic: "...",
     },
