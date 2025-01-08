@@ -145,7 +145,7 @@ export default function NavbarSection() {
       className="bg-[#cdc98a] text-[#460b09] "
       onMenuOpenChange={setIsMenuOpen}
       isBordered
-      shouldHideOnScroll
+      // shouldHideOnScroll
       classNames={{
         item: [
           "flex",
